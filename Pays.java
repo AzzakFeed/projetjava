@@ -1,48 +1,46 @@
 public class Pays{
 
 	//Champs
-		private String joueur; //correspondra à la couleur associé au joueur
+		private Joueur joueur; //correspond au joueur qui possède le pays
 		private int id; //n° du pays
 		private String nom; //Nom du pays
 		private int occupepar; //nombre de pions sur le pays
-		private int deplacement1; //indique l'id du pays voisin vers lequel il est possible de déplacer ses pions; au maximum un pays peut avoir 6 pays voisins
-		private int deplacement2;
-		private int deplacement3;
-		private int deplacement4;
-		private int deplacement5;
-		private int deplacement6;
-
+		private Pays[] tabdeplacements= new Pays[6]; //tableau des pays voisins (tableau d'objets Pays)
+		private static int nbpayscrees=0; //va nous permettre avec la variable suivante de connaitre le nombre d'objet 'Pays' créés
+		private int nbpays; 
+	        private int nbvoisins =0;	
 	//Constructeurs
 		//constructeur vide
-		public Pays (){
-			this("0",0,"neverland",0,0,0,0,0,0,0);
-		}
+		/*public Pays (){
+			this(j1,0,"neverland",0);
+			nbpays=++nbpayscrees;
+		}*/
 		//constructeur "max"
-		public Pays(String joueur,int id,String nom,int occupepar,int deplacement1,int deplacement2,int deplacement3,int deplacement4,int deplacement5,int deplacement6){
+		public Pays(Joueur joueur,int id,String nom,int occupepar ){
 			this.joueur=joueur;
 			this.id=id;
 			this.nom=nom;
 			this.occupepar=occupepar;
-			this.deplacement1=deplacement1;
-			this.deplacement2=deplacement2;
-			this.deplacement3=deplacement3;
-			this.deplacement4=deplacement4;
-			this.deplacement5=deplacement5;
-			this.deplacement6=deplacement6;
 		}
 
 	//Methodes
 		//"Setteurs"
 		//pour modifier le propriétaire du pays
-		public void setJoueur(String joueur){
+		public void setJoueur(Joueur joueur){
 			this.joueur=joueur;
 		}
 		//pour modifier le nombre de pions occupant un pays
 		public void setOccupepar(int occupepar){
 			this.occupepar=occupepar;
 		}
+
+		public void addVoisin (Pays p){
+			tabdeplacements[nbvoisins]=p;
+			nbvoisins++;
+		}
+		
 		//"Getteurs"
-		public String getJoueur(){
+		public Joueur getJoueur(){
 			return joueur;
 		}
 		public int getId(){
@@ -54,28 +52,12 @@ public class Pays{
 		public int getOccupepar(){
 			return occupepar;
 		}
-		public int getDeplacement1(){
-			return deplacement1;
-		}
-		public int getDeplacement2(){
-			return deplacement2;
-		}
-		public int getDeplacement3(){
-			return deplacement3;
-		}
-		public int getDeplacement3(){
-			return deplacement1;
-		}
-		public int getDeplacement4(){
-			return deplacement4;
-		}
-		public int getDeplacement5(){
-			return deplacement5;
-		}
-		public int getDeplacement6(){
-			return deplacement6;
-		}
+		/*public Pays[] getDeplacements(){
+			return tabdeplacements;
+		}*/
 }
+
+
 
 
 
