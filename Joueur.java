@@ -13,14 +13,14 @@ public class Joueur{
 	}
 	
 	//Constructeur max
-	public Joueur (String c, int n){
+	public Joueur (String c, int n, int id){
 		couleur = c;
 		nConditionDeVictoire = n;
 		id = ++n; // Incrémentation à chaque création d'une instance.
 	}
 	
 	//set
-public void set(String c, int n){
+public void set(String c, int n, int id){
 	couleur = c;
 	nConditionDeVictoire = n;
 }
