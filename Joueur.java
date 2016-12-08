@@ -34,6 +34,9 @@ public String getCouleur() {
 public int getNConditionDeVictoire() {
 	return nConditionDeVictoire;
 }
-
+	//get id
+public int getId() {
+	return id;
+}
 }
 
