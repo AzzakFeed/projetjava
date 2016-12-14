@@ -6,19 +6,31 @@
 </head>
 <body>
 
-<div class="top"> 
-<h2> Groupe de musique</h2>
-</div>
 
-<div class="left">
-    LEFT
-</div>
-<div class="main">
- <button type="button">Je suis musicien et je recherche un groupe</button> 
- 
- 
+<!-- Barre de navigation horizontale, top !-->
+<ul class="nav" id="nav">
+  <li><a href="#home">Accueil</a></li>
+    <li><a href="#addgroup">Ajouter votre groupe</a></li>
+	<li><a href="#addmusician">Ajouter votre profil de musicien</a></li>
+  <li><a href="#about">A propos</a></li>
+  <li><a href="#contact">Contact</a></li>
+</ul>
 
- </div>
+<!-- Titre !-->
+    <header>
+        <div class="header">
+                <h1>Nom du site<h1>
+				<p>Référencez-vous et trouvez un groupe ou des musiciens</p>
+        </div>
+    </header>
+
+<!-- Bouttons !-->	
+
+<!-- Aller à la page add group !-->
+<a href="#" class="button">Je suis un groupe</a><a name="tests"></a> 
+
+<a href="#" class="button">Je suis un musicien</a><a name="tests"></a> 
+
 
 
 </body>
