@@ -74,24 +74,91 @@ header.p {
 
 
 .button {
- display: inline-block;
+ display: block;
  color: #f2f2f2;
  font-family: Verdana;
- font-size: 40px;
- padding: 10px 40px;
+ font-size: 25px;
+ padding: 10px 5px;
  background-color: #333;
  opacity : 0.9;
  text-decoration: none;
+ text-align: center;
  position: relative;
- left: 500px;
-
-
- 
+ width: 30%;
+ margin-left: auto;
+ margin-right: auto;
 }
+
+
 .button:hover, .button:active{
  color: #fCfCf;
  background-color:#555;
+ 
 }
+
+.buttonregister {
+ display: block;
+ color: #f2f2f2;
+ font-family: Verdana;
+ font-size: 25px;
+ padding: 10px 5px;
+ background-color: #333;
+ opacity : 0.9;
+ text-decoration: none;
+ text-align: center;
+ position: relative;
+ width: 30%;
+ margin-left: auto;
+ margin-right: auto;
+}
+
+
+
+.formulogin {
+
+ display: block;
+ padding: 10px 1px;
+ color: #f2f2f2;
+ font-family: Verdana;
+ font-size: 30px;
+ background-color: #333;
+ opacity : 0.9;
+ text-decoration: none;
+ text-align: center;
+ position: relative;
+ width: 25%;
+ margin-left: auto;
+ margin-right: auto;
+}
+
+.formuregister {
+
+ display: none;
+ padding: 10px 1px;
+ color: #f2f2f2;
+ font-family: Verdana;
+ font-size: 30px;
+ background-color: #333;
+ opacity : 0.9;
+ text-decoration: none;
+ text-align: center;
+ position: relative;
+ width: 30%;
+ margin-left: auto;
+ margin-right: auto;
+}
+
+input[type=submit] {
+padding: 10px 1px;
+ color: #f2f2f2;
+ font-family: Verdana;
+ font-size: 30px;
+ background-color: #333;
+ opacity : 0.9;
+ text-decoration: none;
+ text-align: center;
+ position: relative;
+ }
 
 /*
 .left {
