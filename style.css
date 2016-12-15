@@ -111,8 +111,21 @@ header.p {
  margin-left: auto;
  margin-right: auto;
 }
-
-
+.buttonlogin {
+ display: none;
+ color: #f2f2f2;
+ font-family: Verdana;
+ font-size: 25px;
+ padding: 10px 5px;
+ background-color: #333;
+ opacity : 0.9;
+ text-decoration: none;
+ text-align: center;
+ position: relative;
+ width: 30%;
+ margin-left: auto;
+ margin-right: auto;
+}
 
 .formulogin {
 
@@ -159,39 +172,3 @@ padding: 10px 1px;
  text-align: center;
  position: relative;
  }
-
-/*
-.left {
-    width: 178px;
-    float:left;
-    background-color:black;
-    min-height:100%;
-    border-style: solid;
-    border-color: dark;
-}
-.main {
-  margin-left:178px;
-  min-height:100%:
- }
- 
-.top {
-	background-color:black;
-	color:white;
-	padding:20px;
-	align="center">
-    height: 92px;
-    border-style: solid;
-    border-color: black;
-}
-.button {
-	margin: auto;
-    background-color: #555555; 
-    border: solid;
-    color: white;
-    padding: 32px 64px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 16px;
-}
-
-*/
