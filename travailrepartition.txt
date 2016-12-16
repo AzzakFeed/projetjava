@@ -13,8 +13,11 @@ Reste :
 - lier le compte utilisateur aux groupes/musiciens ?
 - changer les informations entrées dans la BD sous son nom d'utilisateur ?
 
+RDV Mardi 9h30
+pour terminer tout ça !
 
-2ème semaine : projet java
+
+3ème semaine : projet java
 On a :
 - les joueurs
 - les pays
@@ -31,12 +34,6 @@ Reste :
 - coder les déplacements de pions
 - coder le changement de tour
 - coder la vérification des conditions de victoire
-- coder et implémenter l'interface graphique ? lolz
-
-A répartir sur 2-3 semaines.
 
 
-3ème semaine : 
-
-
-4ème semaine : 
+4ème semaine :  - coder et implémenter l'interface graphique ? lolz
