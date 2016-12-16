@@ -1,0 +1,41 @@
+Repartition du travail pour les vacs
+
+1ère semaine : Finir PHP ?
+
+Reste :
+- deux pages : contact et à propos
+- finir le formulaire musicien/groupe
+- faire la page de recherche de groupe/musicien
+- fignoler la présentation
+
+- lier le compte utilisateur à la page d'accueil ? 
+- coder la déconnexion ?
+- changer les informations entrées dans la BD ?
+
+
+2ème semaine : projet java
+On a :
+- les joueurs
+- les pays
+- les numéros de condition de victoire
+
+
+Reste : 
+- coder les conditions de victoire
+- coder le placement des pions sur les territoires
+- coder les renforts
+- coder le choix des territoires à attaquer
+- coder les combats
+- coder les conquête
+- coder les déplacements de pions
+- coder le changement de tour
+- coder la vérification des conditions de victoire
+- coder et implémenter l'interface graphique ? lolz
+
+A répartir sur 2-3 semaines.
+
+
+3ème semaine : 
+
+
+4ème semaine : 
