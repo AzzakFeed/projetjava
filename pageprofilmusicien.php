@@ -6,17 +6,53 @@ session_start();
 
  $mysqli = new mysqli("mysql", "E102952E","WKXM9C9F", "E102952E");
  
-if ( isset($_POST['nom']) && isset($_POST['prenom'])  && isset($_POST['age'])  && isset($_POST['villemusicien'])) {
+if ( isset($_POST['nom']) && isset($_POST['prenom'])  && isset($_POST['age'])
+  && isset($_POST['villemusicien'])  && isset($_POST['numtelm'])  && isset($_POST['mailm'])
+    && isset($_POST['sitem'])   && isset($_POST['descriptionmusicien'])
+      && (isset($_POST['guitare']) || isset($_POST['basse']) || isset($_POST['batterie'])|| isset($_POST['chanteur']) )) {
  $a = $_POST['nom'];
  $b = $_POST['prenom'];
  $c = $_POST['age'];
  $d = $_POST['villemusicien'];
+ $e = $_POST['numtelm'];
+ $f = $_POST['mailm'];
+ $g = $_POST['sitem'];
+ $description = $_POST['descriptionmusicien'];
+ for($i=1;$i<=4;$i++){
+	if(isset($_POST['guitare'])){
+		$instru='guitare';
+	}else{
+		if(isset($_POST['basse'])){
+			$instru='basse';
+		}else{
+			if(isset($_POST['batterie'])){
+				$instru='batterie';
+			}else{
+				if(isset($_POST['chanteur'])){
+					$instru='chanteur';
+				}
+			}
+		}
+	}
+}
+$test=$_POST['style[]'];
+ switch ($test){
+	case 1 : $stylem='Rock';
+	case 2 : $stylem='Jazz';
+	case 3 : $stylem='Reggae';
+	case 4 : $stylem='Blues';
+	case 5 : $stylem='Disco';
+	case 6 : $stylem='Rap';
+}
 
- $sql = "INSERT INTO Musicien (nomm, prenomm, agem, villem) 
- VALUES ('$a', '$b', '$c', '$d')";
+
+	 
+ $sql = "INSERT INTO Musicien (nomm, prenomm, agem, villem, telephonem, adressemailm, sitem, descriptionm, instrumentm,stylem) 
+ VALUES ('$a', '$b', '$c', '$d', '$e', '$f', '$g','$description', '$instru', '$stylem')";
 
  $mysqli->query($sql);
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -60,13 +96,12 @@ if ( isset($_POST['nom']) && isset($_POST['prenom'])  && isset($_POST['age'])  &
 				<input type="text" name="sitem"></p>
 				<p>De quel(s) instrument(s) jouez-vous? <br>
 					Guitare <INPUT type="checkbox" name="guitare"><br>
-					Vilon <INPUT type="checkbox" name="violon"><br>
 					Basse <INPUT type="checkbox" name="basse"><br>
 					Batterie <INPUT type="checkbox" name="batterie"><br>
 					Chanteur <INPUT type="checkbox" name="chanteur"><br>
 				</p>
 				<p>Style musical:<br>
-				<SELECT name="style[]" size="3" multiple>
+				<SELECT name="style[]" size="6" multiple>
 					<OPTION value=1>Rock</OPTION>
 					<OPTION value=2>Jazz</OPTION>
 					<OPTION value=3>Reggae</OPTION>
@@ -75,7 +110,7 @@ if ( isset($_POST['nom']) && isset($_POST['prenom'])  && isset($_POST['age'])  &
 					<OPTION value=6>Rap</OPTION>     
 				</SELECT> </p>
 				<p></p>
-				<p>Descrivez vous:<br><TEXTAREA name="descriptionmusicien" rows="8" cols="20">
+				<p>Decrivez vous:<br><TEXTAREA name="descriptionmusicien" rows="8" cols="20">
 				<!--Présentez vous, votre histoire, vos objectifs, etc... !-->
 				</TEXTAREA></p>
 				<p><input type="submit" value="Ajouter"/></p>
