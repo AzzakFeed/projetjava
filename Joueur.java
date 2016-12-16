@@ -38,4 +38,8 @@ public int getNConditionDeVictoire() {
 public int getId() {
 	return id;
 }
+	//get n
+public int getN() {
+	return n;
+}
 }

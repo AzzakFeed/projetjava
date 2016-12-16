@@ -17,7 +17,7 @@ public class AttributionPaysBis {
 	//Tirage au sort des conditions de victoire
 	// Total 8
 	for(i=0;i<3;i++){
-		tirage =(int)(1+(int)(Math.random() * ((8-1) +1)));
+		tirage =(1+(int)(Math.random() * ((8-1) +1)));
 		cond[i] = tirage;
 	}
 
@@ -283,11 +283,10 @@ public class AttributionPaysBis {
 	
 	//attribution des pays
 	for(i=0;i<3;i++){
-		color=tabJoueur[i].getCouleur();
 		for (j=0;j<nbpays;j++){
 			test=false;
 			while(test==false){
-				y=(int)((int)(Math.random() * ((41) +1))); //obtenir un nombre aléatoire entre 0 et 41
+				y=((int)(Math.random() * ((41) +1))); //obtenir un nombre aléatoire entre 0 et 41
 				if (tableauAttribution[y]==false){ //le pays est disponible
 					tabPays[y].setJoueur(tabJoueur[i]);
 					tableauAttribution[y]=true;

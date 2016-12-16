@@ -16,8 +16,7 @@ public class Pays{
 			nbpays=++nbpayscrees;
 		}*/
 		//constructeur "max"
-		public Pays(Joueur joueur,int id,String nom,int occupepar ){
-			this.joueur=joueur;
+		public Pays(int id,String nom,int occupepar ){
 			this.id=id;
 			this.nom=nom;
 			this.occupepar=occupepar;
