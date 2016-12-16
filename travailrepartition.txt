@@ -10,7 +10,8 @@ Reste :
 
 - lier le compte utilisateur à la page d'accueil ? 
 - coder la déconnexion ?
-- changer les informations entrées dans la BD ?
+- lier le compte utilisateur aux groupes/musiciens ?
+- changer les informations entrées dans la BD sous son nom d'utilisateur ?
 
 
 2ème semaine : projet java
