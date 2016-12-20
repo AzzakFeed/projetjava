@@ -3,13 +3,13 @@ session_start();
 ?>
 
 <?php
-
  $mysqli = new mysqli("mysql", "E102952E","WKXM9C9F", "E102952E");
  
 if ( isset($_POST['nom']) && isset($_POST['prenom'])  && isset($_POST['age'])
   && isset($_POST['villemusicien'])  && isset($_POST['numtelm'])  && isset($_POST['mailm'])
     && isset($_POST['sitem'])   && isset($_POST['descriptionmusicien'])
-      && (isset($_POST['guitare']) || isset($_POST['basse']) || isset($_POST['batterie'])|| isset($_POST['chanteur']) )) {
+      && (isset($_POST['guitare']) || isset($_POST['basse']) || isset($_POST['batterie'])|| isset($_POST['chanteur']) )
+		&& (isset($_POST['rock']) || isset($_POST['blues']) || isset($_POST['jazz'])|| isset($_POST['rap']) )) {
  $a = $_POST['nom'];
  $b = $_POST['prenom'];
  $c = $_POST['age'];
@@ -35,24 +35,30 @@ if ( isset($_POST['nom']) && isset($_POST['prenom'])  && isset($_POST['age'])
 		}
 	}
 }
-$test=$_POST['style[]'];
- switch ($test){
-	case 1 : $stylem='Rock';
-	case 2 : $stylem='Jazz';
-	case 3 : $stylem='Reggae';
-	case 4 : $stylem='Blues';
-	case 5 : $stylem='Disco';
-	case 6 : $stylem='Rap';
+ for($j=1;$j<=4;$j++){
+	if(isset($_POST['rock'])){
+		$stylem='Rock';
+	}else{
+		if(isset($_POST['blues'])){
+			$stylem='Blues';
+		}else{
+			if(isset($_POST['jazz'])){
+				$stylem='Jazz';
+			}else{
+				if(isset($_POST['rap'])){
+					$stylem='Rap';
+				}
+			}
+		}
+	}
 }
-
-
 	 
  $sql = "INSERT INTO Musicien (nomm, prenomm, agem, villem, telephonem, adressemailm, sitem, descriptionm, instrumentm,stylem) 
  VALUES ('$a', '$b', '$c', '$d', '$e', '$f', '$g','$description', '$instru', '$stylem')";
-
  $mysqli->query($sql);
+ 
+ header('Location: http://pubhtml/~E092321Z/Projet_PHP/succesformulaire.php');
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -94,21 +100,17 @@ $test=$_POST['style[]'];
 				<input type="email" name="mailm"></p>
 				<p>Site internet <br>(MySpace, facebook, BandCamp, etc...):<br>
 				<input type="text" name="sitem"></p>
-				<p>De quel(s) instrument(s) jouez-vous? <br>
-					Guitare <INPUT type="checkbox" name="guitare"><br>
+				<p>De quel instrument jouez-vous? <br>
+					Guitare <INPUT type="checkbox" name="guitare">
 					Basse <INPUT type="checkbox" name="basse"><br>
-					Batterie <INPUT type="checkbox" name="batterie"><br>
+					Batterie <INPUT type="checkbox" name="batterie">
 					Chanteur <INPUT type="checkbox" name="chanteur"><br>
 				</p>
 				<p>Style musical:<br>
-				<SELECT name="style[]" size="6" multiple>
-					<OPTION value=1>Rock</OPTION>
-					<OPTION value=2>Jazz</OPTION>
-					<OPTION value=3>Reggae</OPTION>
-					<OPTION value=4>Blues</OPTION>
-					<OPTION value=5>Disco</OPTION>
-					<OPTION value=6>Rap</OPTION>     
-				</SELECT> </p>
+					Rock <INPUT type="checkbox" name="rock">
+					Blues <INPUT type="checkbox" name="blues"><br>
+					Jazz <INPUT type="checkbox" name="jazz">
+					Rap <INPUT type="checkbox" name="rap"><br>
 				<p></p>
 				<p>Decrivez vous:<br><TEXTAREA name="descriptionmusicien" rows="8" cols="20">
 				<!--Présentez vous, votre histoire, vos objectifs, etc... !-->

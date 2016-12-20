@@ -6,7 +6,9 @@ session_start();
 
  $mysqli = new mysqli("mysql", "E102952E","WKXM9C9F", "E102952E");
  
-if ( isset($_POST['nomgroupe']) && isset($_POST['villegroupe'])  && isset($_POST['numtelg'])  && isset($_POST['mailg'])  && isset($_POST['siteg'])   && isset($_POST['descriptiongroupe'])) {
+if ( isset($_POST['nomgroupe']) && isset($_POST['villegroupe'])  && isset($_POST['numtelg'])
+  && isset($_POST['mailg'])  && isset($_POST['siteg'])   && isset($_POST['descriptiongroupe'])
+	&& (isset($_POST['rock']) || isset($_POST['blues']) || isset($_POST['jazz'])|| isset($_POST['rap']) )) {
  $a = $_POST['nomgroupe'];
  $b = $_POST['villegroupe'];
  $c = $_POST['numtelg'];
@@ -14,10 +16,30 @@ if ( isset($_POST['nomgroupe']) && isset($_POST['villegroupe'])  && isset($_POST
  $e = $_POST['siteg'];
  $description = $_POST['descriptiongroupe'];
 
- $sql = "INSERT INTO Groupe (nomg, villeg, telephoneg, adressemailg, siteg, descriptiong) 
- VALUES ('$a', '$b', '$c', '$d', '$e', '$description')";
+for($j=1;$j<=4;$j++){
+	if(isset($_POST['rock'])){
+		$styleg='Rock';
+	}else{
+		if(isset($_POST['blues'])){
+			$styleg='Blues';
+		}else{
+			if(isset($_POST['jazz'])){
+				$styleg='Jazz';
+			}else{
+				if(isset($_POST['rap'])){
+					$styleg='Rap';
+				}
+			}
+		}
+	}
+}
+ $sql = "INSERT INTO Groupe (nomg, villeg, telephoneg, adressemailg, siteg, descriptiong,styleg) 
+ VALUES ('$a', '$b', '$c', '$d', '$e', '$description','$Styleg')";
 
  $mysqli->query($sql);
+ 
+ header('Location: http://pubhtml/~E092321Z/Projet_PHP/succesformulaire.php');
+ 
 }
 
 ?>
@@ -58,14 +80,11 @@ if ( isset($_POST['nomgroupe']) && isset($_POST['villegroupe'])  && isset($_POST
 				<p>Site internet <br>(MySpace, facebook, BandCamp, etc...):<br>
 				<input type="text" name="siteg"></p>
 				<p>Style musical:<br>
-				<SELECT name="style[]" size="3" multiple>
-					<OPTION value=1>Rock</OPTION>
-					<OPTION value=2>Jazz</OPTION>
-					<OPTION value=3>Reggae</OPTION>
-					<OPTION value=4>Blues</OPTION>
-					<OPTION value=5>Disco</OPTION>
-					<OPTION value=6>Rap</OPTION>     
-				</SELECT> </p>
+					Rock <INPUT type="checkbox" name="rock">
+					Blues <INPUT type="checkbox" name="blues"><br>
+					Jazz <INPUT type="checkbox" name="jazz">
+					Rap <INPUT type="checkbox" name="rap"><br>
+				<p></p>
 				<p></p>
 				<p>Description du groupe:<br><TEXTAREA name="descriptiongroupe" rows="8" cols="20">
 				<!--Présentez votre groupe, son histoire, les membres qui le composent, ses objectifs, etc... !-->
