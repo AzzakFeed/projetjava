@@ -18,39 +18,6 @@ function searchgroup() {
 }
 </script>
 
-<?php
-
-
-$mysqli = new mysqli("mysql", "E102952E","WKXM9C9F", "E102952E");
-
-
-if ( isset( $_POST['envoyer'] ) ) { 
-	
-	// Vérifie et sauvegarde si les champs corresondants sont remplis
-	if (isset( $_POST['nomgroupe'])){
- $a = $_POST['nomgroupe'];
-}
-
-if (isset( $_POST['villegroupe'])){
- $b = $_POST['villegroupe'];
-}
-
- $sql = "SELECT * FROM Groupe";
- $result = $mysqli->query($sql);
- if ($result->num_rows > 0) {
-    // output data of each row
-    while($row = $result->fetch_assoc()) {
-        echo "Nom: " . $row["nomg"]. " - Ville: " . $row["villeg"]. " " . $row["siteg"]. "<br>";
-    }
-} else {
-    echo "0 results";
-}
-$mysqli->close();
-}
-
-?>
-
-
 
 <title>ProjetPHP</title>
 </head>
@@ -92,15 +59,15 @@ $mysqli->close();
 		<fieldset>
 		<legend>Recherche d'un groupe</legend>
 		<p>Vous pouvez renseigner ou non les champs suivants pour affiner votre recherche. Sinon, tout l'annuaire sera affiché.</p>
-				<form method="post">
+				<form action="results.php" method="post" target="_blank">
 				<p>Nom du groupe:<br>
 				<input type="text" name="nomgroupe"></p>
 				<p>Ville:<br>
 				<input type="text" name="villegroupe"></p>
 				<p>Style musical:<br>
 				<p>Recherche un musicien jouant de l'instrument suivant : (guitare, :<br>
-				<input type="text" name="nomgroupe"></p>
-				<input type="submit" name="envoyer">
+				<input type="text" name="instrument"></p>
+				<input type="submit" name="submit" value="Lancer la recherche">
 				</fieldset>
 </div>
 
