@@ -29,17 +29,17 @@
 <!-- Bouttons !-->	
 
 <!-- Aller à la page add musician!-->
-<a href="#" class="button">Je recherche un groupe</a><a name="tests"></a> 
-<br/>
-<br/>
-<br/>
+<a href="#" class="button">Je veux m'enregistrer en tant que groupe</a><a name="tests"></a> 
 <br/>
 <br/>
 <br/>
 <!-- Aller à la page add group !-->
-<a href="#" class="button">Je recherche un ou plusieurs musiciens</a><a name="tests"></a> 
-
-
+<a href="#" class="button">Je veux m'enregistrer en tant que musicien</a><a name="tests"></a> 
+<!-- Aller à la page recherche !-->
+<br/>
+<br/>
+<br/>
+<a href="recherche.php" class="button">Je veux rechercher des groupes ou des musiciens</a><a name="tests"></a> 
 
 </body>
 </html>

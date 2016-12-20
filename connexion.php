@@ -73,7 +73,7 @@ $mysqli = new mysqli("mysql", "E102952E","WKXM9C9F", "E102952E");
   
   
   
-  // clean user inputs to prevent sql injections 
+  // Nettoyage des données insérées par l'utilisateur afin d'éviter des injections SQL
   $name_user = trim($_POST['name_user']); 
   $name_user = strip_tags($name_user); 
   $name_user = htmlspecialchars($name_user);
@@ -153,7 +153,7 @@ $mysqli = new mysqli("mysql", "E102952E","WKXM9C9F", "E102952E");
 	<li><a href="#addmusician">Ajouter votre profil de musicien</a></li>
   <li><a href="#about">A propos</a></li>
   <li><a href="#contact">Contact</a></li>
-  <!-- pas de bouton déconnexion pour la page de déconnexion-->
+  <!-- pas de bouton déconnexion pour la page de connexion-->
 </ul>
 
 <!-- Titre !-->

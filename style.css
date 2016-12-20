@@ -6,6 +6,7 @@ body {
 	background-image: url('header.jpg');
     background-position: center;
 	background-size: cover;
+	background-attachment: fixed;
 }
 
 header {
@@ -93,7 +94,6 @@ header.p {
 .button:hover, .button:active{
  color: #fCfCf;
  background-color:#555;
- 
 }
 
 .buttonregister {
@@ -127,8 +127,47 @@ header.p {
  margin-right: auto;
 }
 
-.formulogin {
+.buttonsearchmusician {
+ display: block;
+ color: #f2f2f2;
+ font-family: Verdana;
+ font-size: 25px;
+ padding: 10px 5px;
+ background-color: #333;
+ opacity : 0.9;
+ text-decoration: none;
+ text-align: center;
+ position: relative;
+ width: 30%;
+ margin-left: auto;
+ margin-right: auto;
+}
+.buttonsearchmusician:hover, .button:active{
+ color: #fCfCf;
+ background-color:#555;
+}
 
+.buttonsearchgroup {
+ display: block;
+ color: #f2f2f2;
+ font-family: Verdana;
+ font-size: 25px;
+ padding: 10px 5px;
+ background-color: #333;
+ opacity : 0.9;
+ text-decoration: none;
+ text-align: center;
+ position: relative;
+ width: 30%;
+ margin-left: auto;
+ margin-right: auto;
+}
+.buttonsearchgroup:hover, .button:active{
+ color: #fCfCf;
+ background-color:#555;
+ }
+
+.formulogin {
  display: block;
  padding: 10px 1px;
  color: #f2f2f2;
@@ -172,3 +211,50 @@ padding: 10px 1px;
  text-align: center;
  position: relative;
  }
+
+	
+div#bandeau {
+	width:600px;
+	height:50px;
+	background-color:#555;
+	opacity : 0.9;
+	text-align:center;
+	margin-left: auto;
+	margin-right: auto;
+	font-family: Verdana;
+	font-size: 30px;
+	 color: #f2f2f2;
+}
+div#contenu {
+	width:600px;
+	height:400px;
+	background-color:#555;
+	opacity : 0.9;
+}
+div#formulaire {
+	width:50%;
+	height:75%;
+	background-color:#555;
+	opacity : 0.9;
+	text-align:center;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	
+}
+div#contenuform {
+	width:50%;
+	height:75%;
+	opacity : 0.9;
+	text-align:center;
+	margin-left: auto;
+	margin-right: auto;
+	font-family: Verdana;
+	font-size: 20px;
+	background-color: #333;
+	color: #f2f2f2;
+	border-color : white;
+	border: 1px solid rgba(180,180,180,1);
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+}
