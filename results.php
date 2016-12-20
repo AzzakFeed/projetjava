@@ -82,7 +82,7 @@ for($j=1;$j<=4;$j++){
 }
 //rajouter conditions négatives
 if (isset( $_POST['nomgroupe'])){
-	$req = "SELECT nomg, villeg, styleg, telephoneg FROM Groupe WHERE nomg='$vnomg'";
+	$req = "SELECT nomg, villeg, styleg, telephoneg FROM Groupe WHERE nomg='$nomg'";
 	$stmt = mysqli_prepare($mysqli,$req);
 	mysqli_stmt_execute($stmt);
 	mysqli_stmt_bind_result($stmt, $nomg, $villeg, $styleg, $telephoneg);
