@@ -2,7 +2,7 @@
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="style.css">
-<title>A Propos</title>
+<title>Déconnexion</title>
 </head>
 <body>
 
@@ -20,19 +20,29 @@
    <header>
         <div class="header">
                 <h1>Nom<h1>
-				<p>A propos</p>
+				<p>Déconnexion</p>
         </div>
     </header>
 
-<div class="contenu" id="box">
-	<br>
-	Recherchegroupe est une plateforme répertoriant des musiciens et des groupes de musique en France métropolitaine. <br> <br>
-	Enregistrez-vous et contactez directement les groupes et les musiciens qui vous intéressent! <br> <br>
-	Notre base de données "matche" les groupes et les profils de musiciens en fonction des talents recherchés. Elle vous permet également de classer vos requêtes par style de musique et localisation.
-	<br> <br>
+<div class="contenu" id="smallbox">
+	Merci de votre visite et à bientôt !
+	<?php
+	
+	session_destroy();
+	
+	?>
+		
+	 </div>
+	 <br> <br>
+<a href="connexion.php" class="button">Retour à la page d'accueil</a>
+	
+	
+	
+	
+
 	   
 	  
-	    </div>
+	   
 
 </body>
 </html>

@@ -37,8 +37,8 @@ function searchgroup() {
 <!-- Titre !-->
     <header>
         <div class="header">
-                <h1>Annuaire<h1>
-				<p></p>
+                <h1>Nom<h1>
+				<p>Recherche</p>
         </div>
     </header>
 

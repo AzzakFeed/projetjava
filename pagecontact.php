@@ -1,7 +1,8 @@
+<!DOCTYPE html>
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="style.css">
-<title>Page Contact</title>
+<title>Contact</title>
 </head>
 <body>
 
@@ -16,14 +17,22 @@
 </ul>
 
 <!-- Titre !-->
-    <header>
-        <div id="bandeau">
-                <h1>Contact<h1>
-		</div>
-		<div id="contenu">
-				<p>Ce service est actuellement indisponible</p>
-		</div>
+   <header>
+        <div class="header">
+                <h1>Nom<h1>
+				<p>Contact</p>
+        </div>
     </header>
+
+<div class="contenu" id="box">
+	<br>
+	Site réalisé par Vincent CADIOT et Ken OSHIRO, Master 2 CCI de l'Université de Nantes <br> <br>
+	Adresse de contact : ken.oshiro@etu-univ.nantes.fr , vincent.cadiot@etu-univ.nantes.fr <br> <br>
+	Mise à jour : 18/01/2017
+	<br> <br>
+	   
+	  
+	    </div>
 
 </body>
 </html>
