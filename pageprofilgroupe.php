@@ -55,11 +55,13 @@ for($j=1;$j<=4;$j++){
 
 <!-- Barre de navigation horizontale, top !-->
 <ul class="nav" id="nav">
-  <li><a href="#home">Accueil</a></li>
-    <li><a href="#addgroup">Ajouter votre groupe</a></li>
-	<li><a href="#addmusician">Ajouter votre profil de musicien</a></li>
-  <li><a href="#about">A propos</a></li>
-  <li><a href="#contact">Contact</a></li>
+	<li><a href="pageaccueuil.php">Accueil</a></li>
+    <li><a href="pageprofilgroupe.php">Ajouter votre groupe</a></li>
+	<li><a href="pageprofilmusicien.php">Ajouter votre profil de musicien</a></li>
+	<li><a href="recherche.php">votre recherche</a></li>
+	<li><a href="pageapropos.php">A propos</a></li>
+	<li><a href="pagecontact.php">Contact</a></li>
+    <li><a href="connexion.php">Se déconnecter</a></li>
 </ul>
 
 <!-- Titre !-->

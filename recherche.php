@@ -10,7 +10,6 @@ function searchmusician() {
 	document.getElementById("buttonsearchgroup").style.display = "none";
 	document.getElementById("searchmusician").style.display = "block";
 }
-
 function searchgroup() {
 	document.getElementById("buttonsearchmusician").style.display = "none";
 	document.getElementById("buttonsearchgroup").style.display = "none";
@@ -26,19 +25,20 @@ function searchgroup() {
 
 <!-- Barre de navigation horizontale, top !-->
 <ul class="nav" id="nav">
-  <li><a href="#home">Accueil</a></li>
-    <li><a href="#addgroup">Ajouter votre groupe</a></li>
-	<li><a href="#addmusician">Ajouter votre profil de musicien</a></li>
-  <li><a href="#about">A propos</a></li>
-  <li><a href="#contact">Contact</a></li>
-    <li><a href="#contact">Se déconnecter</a></li>
+	<li><a href="pageaccueuil.php">Accueil</a></li>
+    <li><a href="pageprofilgroupe.php">Ajouter votre groupe</a></li>
+	<li><a href="pageprofilmusicien.php">Ajouter votre profil de musicien</a></li>
+	<li><a href="recherche.php">votre recherche</a></li>
+	<li><a href="pageapropos.php">A propos</a></li>
+	<li><a href="pagecontact.php">Contact</a></li>
+    <li><a href="connexion.php">Se dÃ©connecter</a></li>
 </ul>
 
 <!-- Titre !-->
     <header>
         <div class="header">
-                <h1>Nom<h1>
-				<p>Recherche</p>
+                <h1>Annuaire<h1>
+				<p></p>
         </div>
     </header>
 
@@ -49,24 +49,33 @@ function searchgroup() {
 <br/>
 <button id="buttonsearchgroup" class="buttonsearchgroup" type="button" onclick="searchgroup()">Je recherche un groupe</button>
 
-<!-- Requêtes de recherche !-->
+<!-- RequÃªtes de recherche !-->
 <div class="contenu" id="searchgroup"
 
   <div id="bandeau">
-                <h1>Critères de recherche<h1>
+                <h1>CritÃ¨res de recherche<h1>
 		</div>
 		<div id="contenuform">
 		<fieldset>
 		<legend>Recherche d'un groupe</legend>
-		<p>Vous pouvez renseigner ou non les champs suivants pour affiner votre recherche. Sinon, tout l'annuaire sera affiché.</p>
+		<p>Vous pouvez renseigner ou non les champs suivants pour affiner votre recherche. Sinon, tout l'annuaire sera affichÃ©.</p>
 				<form action="results.php" method="post" target="_blank">
 				<p>Nom du groupe:<br>
 				<input type="text" name="nomgroupe"></p>
 				<p>Ville:<br>
 				<input type="text" name="villegroupe"></p>
 				<p>Style musical:<br>
-				<p>Recherche un musicien jouant de l'instrument suivant : (guitare, :<br>
-				<input type="text" name="instrument"></p>
+					Rock <INPUT type="checkbox" name="rock">
+					Blues <INPUT type="checkbox" name="blues"><br>
+					Jazz <INPUT type="checkbox" name="jazz">
+					Rap <INPUT type="checkbox" name="rap"><br>
+				<p></p>
+				<p>Groupe recherchant l'instrument suivant <br>
+					Guitare <INPUT type="checkbox" name="guitare">
+					Basse <INPUT type="checkbox" name="basse"><br>
+					Batterie <INPUT type="checkbox" name="batterie">
+					Chanteur <INPUT type="checkbox" name="chanteur"><br>
+				</p>
 				<input type="submit" name="submit" value="Lancer la recherche">
 				</fieldset>
 </div>
