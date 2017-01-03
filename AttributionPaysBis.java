@@ -141,7 +141,7 @@ public class AttributionPaysBis {
 	Oceanie[3]=p30;
 	Pays p31=new Pays(31,"Ontario",5);
 	tabPays[30]=p31;
-	AmeriqueNord[5]=p31;
+	AmeriqueNord[6]=p31;
 	Pays p32=new Pays(32,"Oural",5);
 	tabPays[31]=p32;
 	Asie[7]=p32;
@@ -150,7 +150,7 @@ public class AttributionPaysBis {
 	AmeriqueSud[2]=p33;
 	Pays p34=new Pays(34,"Québec",10);
 	tabPays[33]=p34;
-	AmeriqueNord[6]=p34;
+	AmeriqueNord[7]=p34;
 	Pays p35=new Pays(35,"Scandinavie",10);
 	tabPays[34]=p35;
 	Europe[4]=p35;
@@ -165,7 +165,7 @@ public class AttributionPaysBis {
 	Asie[10]=p38;
 	Pays p39=new Pays(39,"Territoire du Nord Ouest",10);
 	tabPays[38]=p39;
-	AmeriqueNord[7]=p39;
+	AmeriqueNord[8]=p39;
 	Pays p40=new Pays(40,"Ukraine",10);
 	tabPays[39]=p40;
 	Europe[5]=p40;
