@@ -51,9 +51,9 @@ public class Pays{
 		public int getOccupepar(){
 			return occupepar;
 		}
-		/*public Pays[] getDeplacements(){
+		public Pays[] getDeplacements(){
 			return tabdeplacements;
-		}*/
+		}
 }
 
 
