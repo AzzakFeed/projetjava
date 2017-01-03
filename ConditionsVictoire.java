@@ -35,6 +35,33 @@ if(cpt ==18){
 }
 
 	
+boolean verifiervictoire2 (Joueur j1){  // Amérique du Nord et Afrique
+	int cptAfrique = 0;
+	int cptAmNord = 0;
+	
+	//posséder l'Amérique du Nord
+	for(i=0;i<9;i++){
+		if(AmeriqueNord[i].getJoueur == j1){
+			cptAmNord = cptAmNord+1;
+		}
+	}
+	
+	//posséder l'Afrique
+	for(i=0;i<6;i++){
+		if(Afrique[i].getJoueur == j1){
+			cptAfrique = cptAfrique+1;
+		}
+	}
+	
+	if(cptAfrique ==6 && cptAmNord == 9){
+		return true;
+		else
+		return false;
+		}
+	}
+	
+	
+	
 
 boolean verifiervictoire3 (Joueur j1){  // Posséder Europe, Amérique du Sud et un troisième continent au choix
 	int cptEurope=0;
@@ -228,6 +255,7 @@ boolean verifiervictoire8 (Joueur j1){ // Posséder Europe, Océanie et un trois
 	}else{
 		return false;
 	}
+}  
 }
  
  
@@ -259,5 +287,4 @@ if (cond[i] = 7) {
 }
 */
 
-}
-}
+
