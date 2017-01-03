@@ -89,6 +89,24 @@ boolean verifiervictoire3 (Joueur j1){  // Posséder Europe, Amérique du Sud et
 	}
 }
 
+	   
+	   
+
+boolean verifiervictoire4 (Joueur j1){  //Posséder 24 territoires
+	int cpt = 0; 
+
+	for(i=0;i==41;i++){
+		if(tabPays[i].getJoueur == j1){
+			cpt += 1;
+		}
+	}
+				
+if(cpt >=24){
+	return true;
+	else
+	return false;
+ }
+}
 	
 	
 
