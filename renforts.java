@@ -21,7 +21,7 @@ int cptAfrique=0;
 	}
 	
 if ( cptEurope = 6 ){
-pionsdispo = +5;
+pionsdispo += 5;
 }
 	
 	//posséder l'Amérique du Sud
@@ -32,7 +32,7 @@ pionsdispo = +5;
 	}
 	
 	if ( cptAmSud = 4 ){
-pionsdispo = +2;
+pionsdispo += 2;
 }
 	
 	//posséder l'Asie
@@ -43,7 +43,7 @@ pionsdispo = +2;
 	}
 	
 	if ( cptAsie = 12 ){
-pionsdispo = +7;
+pionsdispo += 7;
 }
 	
 	
@@ -57,7 +57,7 @@ pionsdispo = +7;
 	
 	
 	if ( cptOceanie = 4 ){
-pionsdispo = +2;
+pionsdispo += 2;
 }	
 	
 	//posséder l'Amérique du Nord
@@ -68,7 +68,7 @@ pionsdispo = +2;
 	}
 	
 	if ( cptAmNord = 9){
-pionsdispo = +5;
+pionsdispo += 5;
 }
 	//posséder l'Afrique
 	for(i=0;i<6;i++){
@@ -78,7 +78,7 @@ pionsdispo = +5;
 	}
 
 if ( cptAfrique = 6 ){
-pionsdispo = +3;
+pionsdispo += 3;
 }
 
 return pionsdispo;
