@@ -1,22 +1,6 @@
 public class ConditionsVictoire {
 
-//Tirage au sort des conditions de victoire
 
-// Total 8
-
-private float[] cond = new float[3];
-
-
-
-for(i=1; i <= 3; i++)
-{
-tirage = 1+(int)(Math.random() * ((8-1) +1));   //
-cond[i] = tirage;
-}
-
-// faire les pays de 22 à 41
-
-	
 boolean verifiervictoire1 (Joueur j1){  //Posséder 18 territoires avec 2 pions au minimum chacun
 	int cpt = 0; 
 
