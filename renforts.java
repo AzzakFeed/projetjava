@@ -1,8 +1,8 @@
-int renforts (Joueur j1){
+int renforts (int j){
 
 // Le joueur dispose chaque tour de renforts égaux au nombre de territoires possédés/3 (arrondi à l'entier inférieur).
 int pionsdispo = 0;
-pionsdispo = Math.floor(tableaudynamiquedej1.size()/3);
+pionsdispo = Math.floor(TabJoueurPays[j].size()/3);
 
 
 // De plus, s'il possède intégralement un continent, le joueur reçoit des renforts supplémentaires.
