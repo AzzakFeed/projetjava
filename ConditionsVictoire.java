@@ -1,6 +1,5 @@
 public class ConditionsVictoire {
 
-
 boolean verifiervictoire1 (Joueur j1){  //Posséder 18 territoires avec 2 pions au minimum chacun
 	int cpt = 0; 
 
@@ -8,16 +7,15 @@ boolean verifiervictoire1 (Joueur j1){  //Posséder 18 territoires avec 2 pions 
 		if(tabPays[i].getJoueur == j1){
 			if(tabPays[i].getOccupepar >=2){
 			cpt += 1;
+			}
 		}
 	}
 				
-if(cpt ==18){
-	return true;
-	else
-	return false;
- }
+	if(cpt ==18){
+		return true;
+		}else
+		return false;
 }
-
 	
 boolean verifiervictoire2 (Joueur j1){  // Amérique du Nord et Afrique
 	int cptAfrique = 0;
@@ -39,14 +37,11 @@ boolean verifiervictoire2 (Joueur j1){  // Amérique du Nord et Afrique
 	
 	if(cptAfrique ==6 && cptAmNord == 9){
 		return true;
-		else
+		}else
 		return false;
-		}
-	}
+		
+}
 	
-	
-	
-
 boolean verifiervictoire3 (Joueur j1){  // Posséder Europe, Amérique du Sud et un troisième continent au choix
 	int cptEurope=0;
 	int cptOceanie=0;
@@ -100,9 +95,6 @@ boolean verifiervictoire3 (Joueur j1){  // Posséder Europe, Amérique du Sud et
 	}
 }
 
-	   
-	   
-
 boolean verifiervictoire4 (Joueur j1){  //Posséder 24 territoires
 	int cpt = 0; 
 
@@ -112,15 +104,12 @@ boolean verifiervictoire4 (Joueur j1){  //Posséder 24 territoires
 		}
 	}
 				
-if(cpt >=24){
-	return true;
-	else
-	return false;
- }
+	if(cpt >=24){
+		return true;
+		}else
+		return false;
 }
 	
-	
-
 boolean verifiervictoire5 (Joueur j1){  // Posséder Amérique du Nord et Océanie
 	int cptOceanie=0;
 	int cptAmNord=0;
@@ -142,6 +131,7 @@ boolean verifiervictoire5 (Joueur j1){  // Posséder Amérique du Nord et Océan
 	}else{
 		return false;
 	}
+}
 
 boolean verifiervictoire6 (Joueur j1){  // Posséder Asie et l'Afrique
 	int cptAsie=0;
@@ -240,6 +230,7 @@ boolean verifiervictoire8 (Joueur j1){ // Posséder Europe, Océanie et un trois
 		return false;
 	}
 }  
+
 }
  
  
@@ -270,5 +261,3 @@ if (cond[i] = 7) {
 	System.out.println("Joueur " +tabJoueur[i].getCouleur+" : Vous devez conquerir en totalité l'Europe et l'Oceanie plus un troisieme continent au choix");
 }
 */
-
-
