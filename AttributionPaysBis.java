@@ -1,4 +1,8 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class AttributionPaysBis {
+
 
 	public static void main (String[] args){
 	//champs
@@ -6,12 +10,19 @@ public class AttributionPaysBis {
 	boolean[] tableauAttribution= new boolean[42]; //tableau des pays non attribués
 	Joueur[] tabJoueur= new Joueur[3]; //tableau des joueurs
 	Pays[] tabPays= new Pays[42]; //tableau des Pays
+	//tableaux des continents
 	Pays[] Afrique= new Pays[6];
 	Pays[] Europe= new Pays[7];
 	Pays[] AmeriqueNord= new Pays[9];
 	Pays[] AmeriqueSud= new Pays[4];
 	Pays[] Asie= new Pays[12];
 	Pays[] Oceanie= new Pays[4];
+	//tableaux des pays possédés par chaque joueur
+	ArrayList Joueur1Pays = new ArrayList();
+	ArrayList Joueur2Pays = new ArrayList();
+	ArrayList Joueur3Pays = new ArrayList();
+	ArrayList[] TabJoueurPays = new ArrayList[3];
+	//variables
 	int i;
 	int j;
 	int y;
@@ -19,6 +30,8 @@ public class AttributionPaysBis {
 	boolean test;
 	int[] cond = new int[3];
 	int tirage;
+	//scanner de saisie
+	Scanner sc = new Scanner(System.in);
 
 	//Tirage au sort des conditions de victoire
 	// Total 8
@@ -45,10 +58,23 @@ public class AttributionPaysBis {
 			     }
 		}
 
+	//tableau des tableaux dynamiques des pays possédés par les joueurs
+		for(i=0;i<3;i++){
+			if(i==0){
+				TabJoueurPays[i]=Joueur1Pays;
+			}else{
+				if (i==1){
+					TabJoueurPays[i]=Joueur2Pays;
+				}else{
+					TabJoueurPays[i]=Joueur3Pays;
+				     }
+			     }
+		}
+
 	//calcul du nombre de pays
 	nbpays=42/3;//nombre de pays par joueur
 
-	//création des pays et du tableau de pays
+	//création des pays, du tableau de pays et des tableaux des continents
 	Pays p1=new Pays(1,"Afghanistan",1);
 	tabPays[0]=p1;
 	Asie[0]=p1;
@@ -174,7 +200,7 @@ public class AttributionPaysBis {
 	AmeriqueSud[3]=p41;
 	Pays p42=new Pays(42,"Yakoutie",5);
 	tabPays[41]=p42;
-	Asie[11]=p42];
+	Asie[11]=p42;
 	
 	//attribution des voisins
 	p1.addVoisin(p40);
@@ -337,11 +363,93 @@ public class AttributionPaysBis {
 				y=((int)(Math.random() * ((41) +1))); //obtenir un nombre aléatoire entre 0 et 41
 				if (tableauAttribution[y]==false){ //le pays est disponible
 					tabPays[y].setJoueur(tabJoueur[i]);
+					if(i==0){
+						Joueur1Pays.add(tabPays[y]);
+						}else{
+							if(i==1){
+								Joueur2Pays.add(tabPays[y]);
+								}else{
+									Joueur3Pays.add(tabPays[y]);
+							 	}
+						}
 					tableauAttribution[y]=true;
 					test=true;
 				}
 			}
 		}
 	}
+	
+	//premier tour: affichage des conditions de victoire+répartition des armées
+
+	for(i=0;i<3;i++){
+		AfficherConditionVictoire(tabJoueur[i]);
+		System.out.println("Joueur "+tabJoueur[i].getCouleur()+" positionnez vos armées");
+		PlacementPionsDebut(i);	
+	}
+	//vrai tour de jeu
+		//reception et disposition des renforts
+		//ordres de déplacement et combat + réattribution des pays et nouvelles positions des armées
+		//vérification de la condition de victoire
+
+}
+//fonctions et procédures
+
+public static void PlacementPionsDebut(int i){
+	int nbpions=0;
+	int nbarme, j, num;
+	ArrayList Joueur1Pays = new ArrayList();
+	ArrayList Joueur2Pays = new ArrayList();
+	ArrayList Joueur3Pays = new ArrayList();
+	ArrayList[] TabJoueurPays = new ArrayList[3];
+	Pays[] tabPays= new Pays[42];
+	Scanner sc = new Scanner(System.in);
+	for(j=0;j<TabJoueurPays[i].size();j++){
+			nbpions=TabJoueurPays[i].get(j).getOccupepar()-1+nbpions;
+		}
+		while (nbpions>0){
+			System.out.println("Il vous reste "+nbpions+" pions à placer");
+			for(j=0;j<TabJoueurPays[i].size();j++){
+				System.out.println("Pays : "+TabJoueurPays[i].get(j).getNom()+" n° "+TabJoueurPays[i].get(j).getId()+" Occupé par : "+TabJoueurPays[i].get(j).getOccupepar()+" armée(s)");
+			}
+			do {
+				System.out.println("saisissez le numéro du pays sur lequel vous voulez placer une/des armée(s)");
+				num=sc.nextInt();
+			}while (true!=TabJoueurPays[i].contains(tabPays[num-1])); 
+			do {
+				System.out.println("saisissez le nombre de troupe à placer");
+				nbarme=sc.nextInt();
+			}while(nbarme<=nbpions && nbarme>=0);
+			tabPays[num-1].setOccupepar(nbarme+1);
+		}
+}
+
+
+public static void AfficherConditionVictoire(Joueur j1){
+	if (j1.getNConditionDeVictoire() == 0){
+		System.out.println("Joueur " +j1.getCouleur()+" : Vous devez conquerir 18 territoires et occuper chacun d'eux avec deux armees au moins");
+	}
+	if (j1.getNConditionDeVictoire() == 1){
+		System.out.println("Joueur " +j1.getCouleur()+" : Vous devez conquerir en totalite l'Amérique du Nord et l'Afrique");
+	}
+	if (j1.getNConditionDeVictoire() == 2){
+		System.out.println("Joueur " +j1.getCouleur()+" : Vous devez conquerir en totalite l'Europe et l'Amerique du sud plus un troisieme continent au choix");
+	}
+	if (j1.getNConditionDeVictoire() == 3) {
+		System.out.println("Joueur " +j1.getCouleur()+" : Vous devez conquerir 24 territoires aux choix");
+	}
+	if (j1.getNConditionDeVictoire() == 4) {
+		System.out.println("Joueur " +j1.getCouleur()+" : Vous devez conquerir en totalite l'Amerique du Nord et l'Oceanie");
+	}
+	if (j1.getNConditionDeVictoire() == 5) {
+		System.out.println("Joueur " +j1.getCouleur()+" : Vous devez conquerir en totalite l'Asie et l'Afrique");
+	}
+	if (j1.getNConditionDeVictoire() == 6) {
+		System.out.println("Joueur " +j1.getCouleur()+" : Vous devez conquerir en totalite l'Asie et l'Amerique du sud");
+	}
+	if (j1.getNConditionDeVictoire() == 7) {
+		System.out.println("Joueur " +j1.getCouleur()+" : Vous devez conquerir en totalité l'Europe et l'Oceanie plus un troisieme continent au choix");
 	}
 }
+}
+
+
