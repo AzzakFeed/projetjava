@@ -1,3 +1,25 @@
+boolean verifiervictoire5 (Joueur j1){  // Posséder Amérique du Nord et Océanie
+	int cptOceanie=0;
+	int cptAmNord=0;
+	//posséder l'Océanie
+	for(i=0;i<4;i++){
+		if(AOceanie[i].getJoueur == j1){
+			cptOceanie = cptOceanie+1;
+		}
+	}
+	//posséder l'Amérique du Nord
+	for(i=0;i<9;i++){
+		if(AmeriqueNord[i].getJoueur == j1){
+			cptAmNord = cptAmNord+1;
+		}
+	}
+	//victoire
+	if(cptOceanie==4 && cptAmNord==6){
+		return true;
+	}else{
+		return false;
+	}
+
 boolean verifiervictoire6 (Joueur j1){  // Posséder Asie et l'Afrique
 	int cptAsie=0;
 	int cptAfrique=0;
@@ -14,7 +36,7 @@ boolean verifiervictoire6 (Joueur j1){  // Posséder Asie et l'Afrique
 		}
 	}
 	//victoire
-	if(cptAsie==12 && cptAfrique=6){
+	if(cptAsie==12 && cptAfrique==6){
 		return true;
 	}else{
 		return false;
