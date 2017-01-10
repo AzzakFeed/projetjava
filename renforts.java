@@ -1,4 +1,4 @@
-int renforts (int j){
+int renforts (Joueur j1){
 
 // Le joueur dispose chaque tour de renforts égaux au nombre de territoires possédés/3 (arrondi à l'entier inférieur).
 int pionsdispo = 0;
