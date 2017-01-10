@@ -20,7 +20,7 @@ int cptAfrique=0;
 		}
 	}
 	
-if ( cptEurope = 6 ){
+if ( cptEurope == 6 ){
 pionsdispo += 5;
 }
 	
@@ -31,7 +31,7 @@ pionsdispo += 5;
 		}
 	}
 	
-	if ( cptAmSud = 4 ){
+	if ( cptAmSud == 4 ){
 pionsdispo += 2;
 }
 	
@@ -42,7 +42,7 @@ pionsdispo += 2;
 		}
 	}
 	
-	if ( cptAsie = 12 ){
+	if ( cptAsie == 12 ){
 pionsdispo += 7;
 }
 	
@@ -56,7 +56,7 @@ pionsdispo += 7;
 	}
 	
 	
-	if ( cptOceanie = 4 ){
+	if ( cptOceanie == 4 ){
 pionsdispo += 2;
 }	
 	
@@ -67,7 +67,7 @@ pionsdispo += 2;
 		}
 	}
 	
-	if ( cptAmNord = 9){
+	if ( cptAmNord == 9){
 pionsdispo += 5;
 }
 	//posséder l'Afrique
@@ -77,7 +77,7 @@ pionsdispo += 5;
 		}
 	}
 
-if ( cptAfrique = 6 ){
+if ( cptAfrique == 6 ){
 pionsdispo += 3;
 }
 
