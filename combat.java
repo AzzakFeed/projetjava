@@ -24,12 +24,6 @@ for(j=0;j<TabJoueurPays[i].size();j++){
 
 static void combat (int att, int def){
 
-
-
-
-
-
-
 int i = 0;
 int jetsatt = 0;
 int jetsdef = 0;
