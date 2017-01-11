@@ -1,27 +1,3 @@
-
-do{System.out.println("Sélectionnez le territoire d'où vous souhaitez lancer une attaque");
-for(j=0;j<TabJoueurPays[i].size();j++){
-	
-	System.out.println("Pays : "+TabJoueurPays[i].get(j).getNom()+" n° "+TabJoueurPays[i].get(j).getId()+" Occupé par : "+TabJoueurPays[i].get(j).getOccupepar()+" armée(s)");
-	}
-	num=sc.nextInt();
-	}while(num<1 || num>=43);
-	if (true==TabJoueurPays[i].contains(tabPays[num-1])){
-		for(j=0;j==6;j++);
-	System.out.println("Cible potentielle : "+TabJoueurPays[i].get(num-1]).getDeplacements(j));
-	
-	do {System.out.println("Entrez le nom du territoire à attaquer");
-	Scanner st = new Scanner(System.in);
-	String st = sc.nextLine();
-} while (true!==TabJoueurPays[i].get(num-1]).getDeplacements(j).contains(st));
-	
-	System.out.println("Combien d'armées souhaitez-vous envoyer ? (entre 1 et 3)");
-	
-	
-
-	
-
-
 static void combat (int att, int def){
 
 int i = 0;
@@ -48,7 +24,7 @@ else {
 	jetsatt = 3;
 }
 
-for (i = 0; i == jetsatt ; i++){
+for (i = 0; i <= jetsatt ; i++){
 resultatatt[i] =(1+(int)(Math.random() * ((6-1) +1)));
 system.out.println("Jet de l'attaquant : " + resultatatt[i]);
 }
@@ -61,20 +37,20 @@ else {
 	jetsdef = 2;
 }
 
-for (i = 0; i == jetsdef ; i++){
+for (i = 0; i <= jetsdef ; i++){
 resultatatt[i] =(1+(int)(Math.random() * ((6-1) +1)));
 system.out.println("Jet du défenseur : "+resultatdef[i]);
 }
 
 // On compare le plus haut résultat de l'attaque face à la plus haute valeur de la défense
-for (i = 0; i == jetsatt ; i++){
+for (i = 0; i <= jetsatt ; i++){
 	if(resultatatt[i] > maxatt){
 		maxatt = resultatatt[i];
 		resultatatt[i] = 0;
 		}
 	}
 		
-for (i = 0; i == jetsdef ; i++){
+for (i = 0; i <= jetsdef ; i++){
 	if(resultatdef[i] > maxdef)[
 		maxdef = resultatdef[i];
 		resultatdef[i] = 0;
@@ -91,13 +67,13 @@ if (maxatt > maxdef){
 // Faut-il comparer un deuxième lancer ?
 
 if (jetsdef > 1){
-	for (i = 0; i == jetsatt ; i++){
+	for (i = 0; i <= jetsatt ; i++){
 	if(resultatatt[i] > maxatt){
 		maxatt = resultatatt[i];
 		}
 	}
 		
-	for (i = 0; i == jetsdef ; i++){
+	for (i = 0; i <= jetsdef ; i++){
 		if(resultatdef[i] > maxdef)[
 			maxdef = resultatdef[i];
 		}
