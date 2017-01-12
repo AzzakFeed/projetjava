@@ -10,13 +10,12 @@
 
 <!-- Titre !-->
     <header>
-        <div id="bandeau">
-                <h1>Formulaire rempli avec succès !!<h1>
+        <div id="box">
+                <h1>Formulaire rempli avec succès !<h1>
 		</div>
-		<div id="contenu">
-			<form method="POST" action="http://pubhtml/~E102952E/projetphp/pageaccueil.php">
-				<input type="submit" value="Retour à la page d'accueuil" >
-			</form>
+		<br>
+		<div button></div>
+	<a href="pageaccueil.php" class="button">Retour à la page d'accueil</a>
 		</div>
     </header>
 
