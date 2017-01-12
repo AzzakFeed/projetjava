@@ -19,33 +19,33 @@ if ( isset($_POST['nom']) && isset($_POST['prenom'])  && isset($_POST['age'])
  $g = $_POST['sitem'];
  $description = $_POST['descriptionmusicien'];
  for($i=1;$i<=4;$i++){
-	if(isset($_POST['guitare'])){
+	if($_POST['guitare'] == on){
 		$instru='guitare';
 	}else{
-		if(isset($_POST['basse'])){
+		if($_POST['basse'] == on){
 			$instru='basse';
 		}else{
-			if(isset($_POST['batterie'])){
+			if($_POST['batterie'] == on){
 				$instru='batterie';
 			}else{
-				if(isset($_POST['chanteur'])){
+				if($_POST['chanteur'] == on){
 					$instru='chanteur';
 				}
 			}
 		}
 	}
 }
- for($j=1;$j<=4;$j++){
-	if(isset($_POST['rock'])){
+for($j=1;$j<=4;$j++){
+	if($_POST['rock'] == on){
 		$stylem='Rock';
 	}else{
-		if(isset($_POST['blues'])){
+		if($_POST['blues'] == on){
 			$stylem='Blues';
 		}else{
-			if(isset($_POST['jazz'])){
+			if($_POST['jazz'] == on){
 				$stylem='Jazz';
 			}else{
-				if(isset($_POST['rap'])){
+				if($_POST['rap'] == on){
 					$stylem='Rap';
 				}
 			}
