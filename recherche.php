@@ -10,6 +10,7 @@ function searchmusician() {
 	document.getElementById("buttonsearchgroup").style.display = "none";
 	document.getElementById("searchmusician").style.display = "block";
 }
+
 function searchgroup() {
 	document.getElementById("buttonsearchmusician").style.display = "none";
 	document.getElementById("buttonsearchgroup").style.display = "none";
@@ -25,20 +26,19 @@ function searchgroup() {
 
 <!-- Barre de navigation horizontale, top !-->
 <ul class="nav" id="nav">
-	<li><a href="pageaccueuil.php">Accueil</a></li>
+  <li><a href="pageaccueil.php">Accueil</a></li>
     <li><a href="pageprofilgroupe.php">Ajouter votre groupe</a></li>
 	<li><a href="pageprofilmusicien.php">Ajouter votre profil de musicien</a></li>
-	<li><a href="recherche.php">votre recherche</a></li>
+	<li><a href="recherche.php">Accéder à l'annuaire</a></li>
 	<li><a href="pageapropos.php">A propos</a></li>
 	<li><a href="pagecontact.php">Contact</a></li>
-    <li><a href="connexion.php">Se dÃ©connecter</a></li>
+    <li><a href="deconnexion.php">Se déconnecter</a></li>
 </ul>
-
 <!-- Titre !-->
     <header>
         <div class="header">
-                <h1>Annuaire<h1>
-				<p></p>
+                <h1>Recherche<h1>
+	
         </div>
     </header>
 
@@ -46,39 +46,73 @@ function searchgroup() {
 <button id="buttonsearchmusician" class="buttonsearchmusician" type="button" onclick="searchmusician()">Je recherche un musicien</button>
 <br/>
 <br/>
-<br/>
 <button id="buttonsearchgroup" class="buttonsearchgroup" type="button" onclick="searchgroup()">Je recherche un groupe</button>
 
-<!-- RequÃªtes de recherche !-->
-<div class="contenu" id="searchgroup"
+<!-- Requêtes de recherche !-->
+<!-- Groupe !-->
+<div class="searchgroup" id="searchgroup"
 
-  <div id="bandeau">
-                <h1>CritÃ¨res de recherche<h1>
-		</div>
+ 
 		<div id="contenuform">
 		<fieldset>
 		<legend>Recherche d'un groupe</legend>
-		<p>Vous pouvez renseigner ou non les champs suivants pour affiner votre recherche. Sinon, tout l'annuaire sera affichÃ©.</p>
+		<p>Vous pouvez renseigner ou non les champs suivants pour affiner votre recherche. Laissez les champs vides pour que tout l'annuaire soit affiché.</p>
 				<form action="results.php" method="post" target="_blank">
 				<p>Nom du groupe:<br>
 				<input type="text" name="nomgroupe"></p>
 				<p>Ville:<br>
 				<input type="text" name="villegroupe"></p>
-				<p>Style musical:<br>
-					Rock <INPUT type="checkbox" name="rock">
-					Blues <INPUT type="checkbox" name="blues"><br>
-					Jazz <INPUT type="checkbox" name="jazz">
-					Rap <INPUT type="checkbox" name="rap"><br>
-				<p></p>
-				<p>Groupe recherchant l'instrument suivant <br>
-					Guitare <INPUT type="checkbox" name="guitare">
-					Basse <INPUT type="checkbox" name="basse"><br>
-					Batterie <INPUT type="checkbox" name="batterie">
-					Chanteur <INPUT type="checkbox" name="chanteur"><br>
-				</p>
+				<p>Style musical:	<br>
+				Rock <INPUT type="checkbox" name="rock">
+				Blues <INPUT type="checkbox" name="blues"><br>
+				Jazz <INPUT type="checkbox" name="jazz">
+				Rap <INPUT type="checkbox" name="rap"><br><br>
+				<p>Le groupe cherche un musicien pratiquant l'instrument suivant :<br>	
+				Guitare <INPUT type="checkbox" name="guitare">
+				Basse <INPUT type="checkbox" name="basse"><br>
+				Batterie <INPUT type="checkbox" name="batterie">
+				Chanteur <INPUT type="checkbox" name="chanteur"><br>
+				<input type="text" name="instrument"></p>
 				<input type="submit" name="submit" value="Lancer la recherche">
+
 				</fieldset>
-</div>
+		</div>
+		</div>
+		
+		
+		
+<!-- Requêtes de recherche !-->
+<!-- Musicien -->
+
+
+<div class="searchmusician" id="searchmusician"
+
+ 
+		<div id="contenuform">
+		<fieldset>
+		<legend>Recherche d'un musicien</legend>
+		<p>Vous pouvez renseigner ou non les champs suivants pour affiner votre recherche. Laissez les champs vides pour que tout l'annuaire soit affiché.</p>
+				<form action="results.php" method="post" target="_blank">
+				<p>Nom du musicien:<br>
+				<input type="text" name="nomm"></p>
+				<p>Ville:<br>
+				<input type="text" name="villem"></p>
+				<p>Style musical:<br>
+				Rock <INPUT type="checkbox" name="rock">
+				Blues <INPUT type="checkbox" name="blues"><br>
+				Jazz <INPUT type="checkbox" name="jazz">
+				Rap <INPUT type="checkbox" name="rap"><br><br>
+				<p>Le musicien recherche un groupe jouant de l'instrument suivant : :<br>	
+				Guitare <INPUT type="checkbox" name="guitare">
+				Basse <INPUT type="checkbox" name="basse"><br>
+				Batterie <INPUT type="checkbox" name="batterie">
+				Chanteur <INPUT type="checkbox" name="chanteur"><br>
+				<input type="text" name="instrument"></p>
+				<input type="submit" name="submit" value="Lancer la recherche">
+
+				</fieldset>
+		</div>
+	</div>
 
 </body>
 </html>
