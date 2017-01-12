@@ -62,17 +62,17 @@ function searchgroup() {
 				<input type="text" name="nomgroupe"></p>
 				<p>Ville:<br>
 				<input type="text" name="villegroupe"></p>
-				<p>Style musical:	<br>
+				<p>Style musical (cochez une seule case):	<br>
 				Rock <INPUT type="checkbox" name="rock">
 				Blues <INPUT type="checkbox" name="blues"><br>
 				Jazz <INPUT type="checkbox" name="jazz">
 				Rap <INPUT type="checkbox" name="rap"><br><br>
-				<p>Le groupe cherche un musicien pratiquant l'instrument suivant :<br>	
+				<p>Le groupe cherche un musicien pratiquant l'instrument suivant (cochez une seule case):<br>	
 				Guitare <INPUT type="checkbox" name="guitare">
 				Basse <INPUT type="checkbox" name="basse"><br>
 				Batterie <INPUT type="checkbox" name="batterie">
 				Chanteur <INPUT type="checkbox" name="chanteur"><br>
-				<input type="text" name="instrument"></p>
+				<br>
 				<input type="submit" name="submit" value="Lancer la recherche">
 
 				</fieldset>
@@ -97,17 +97,17 @@ function searchgroup() {
 				<input type="text" name="nomm"></p>
 				<p>Ville:<br>
 				<input type="text" name="villem"></p>
-				<p>Style musical:<br>
+				<p>Style musical (cochez une seule case):<br>
 				Rock <INPUT type="checkbox" name="rock">
 				Blues <INPUT type="checkbox" name="blues"><br>
 				Jazz <INPUT type="checkbox" name="jazz">
 				Rap <INPUT type="checkbox" name="rap"><br><br>
-				<p>Le musicien recherche un groupe jouant de l'instrument suivant : :<br>	
+				<p>Le musicien joue de l'instrument suivant (cochez une seule case) :<br>	
 				Guitare <INPUT type="checkbox" name="guitare">
 				Basse <INPUT type="checkbox" name="basse"><br>
 				Batterie <INPUT type="checkbox" name="batterie">
 				Chanteur <INPUT type="checkbox" name="chanteur"><br>
-				<input type="text" name="instrument"></p>
+				<br>
 				<input type="submit" name="submit" value="Lancer la recherche">
 
 				</fieldset>
