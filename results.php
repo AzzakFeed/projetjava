@@ -102,7 +102,7 @@ if (isset( $_POST['villegroupe'])){
 	mysqli_stmt_close($stmt);
 }
 
-/*
+
 if (empty($nomg)  && empty($villeg) && empty($instru) && empty($stylem)){ 
 	$req = "SELECT nomg, villeg, styleg, telephoneg FROM Groupe";
 	$stmt = mysqli_prepare($mysqli,$req);
@@ -112,7 +112,7 @@ if (empty($nomg)  && empty($villeg) && empty($instru) && empty($stylem)){
 		printf ("Nom du groupe: %s <br> Ville: %s <br> Style: %s <br> Téléphone: %s <br> __________________________________ <br>",$nomg,$villeg,$styleg,$telephoneg);
 	}
 	mysqli_stmt_close($stmt);
-}*/
+}
 
 
 $mysqli->close();
