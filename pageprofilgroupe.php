@@ -8,7 +8,8 @@ session_start();
  
 if ( isset($_POST['nomgroupe']) && isset($_POST['villegroupe'])  && isset($_POST['numtelg'])
   && isset($_POST['mailg'])  && isset($_POST['siteg'])   && isset($_POST['descriptiongroupe'])
-	&& (isset($_POST['rock']) || isset($_POST['blues']) || isset($_POST['jazz'])|| isset($_POST['rap']) )) {
+	&& (isset($_POST['rock']) || isset($_POST['blues']) || isset($_POST['jazz'])|| isset($_POST['rap']) )
+		&& (isset($_POST['guitariste']) || isset($_POST['bassiste']) || isset($_POST['batteur'])|| isset($_POST['chanteur']) )) {
  $a = $_POST['nomgroupe'];
  $b = $_POST['villegroupe'];
  $c = $_POST['numtelg'];
@@ -33,8 +34,25 @@ for($j=1;$j<=4;$j++){
 		}
 	}
 }
- $sql = "INSERT INTO Groupe (nomg, villeg, telephoneg, adressemailg, siteg, descriptiong,styleg) 
- VALUES ('$a', '$b', '$c', '$d', '$e', '$description','$Styleg')";
+for($j=1;$j<=4;$j++){
+	if($_POST['guitariste'] == on){
+		$chercheg='guitariste';
+	}else{
+		if($_POST['bassiste'] == on){
+			$chercheg='bassiste';
+		}else{
+			if($_POST['batteur'] == on){
+				$chercheg='batteur';
+			}else{
+				if($_POST['chanteur'] == on){
+					$chercheg='chanteur';
+				}
+			}
+		}
+	}
+}
+ $sql = "INSERT INTO Groupe (nomg, villeg, telephoneg, adressemailg, siteg, descriptiong,styleg, grecherchem) 
+ VALUES ('$a', '$b', '$c', '$d', '$e', '$description','$styleg','$chercheg')";
 
  $mysqli->query($sql);
  
@@ -86,6 +104,13 @@ for($j=1;$j<=4;$j++){
 					Blues <INPUT type="checkbox" name="blues"><br>
 					Jazz <INPUT type="checkbox" name="jazz">
 					Rap <INPUT type="checkbox" name="rap"><br>
+				<p>Notre groupe recherche:<br>
+					Rock <INPUT type="checkbox" name="guitariste">
+					Blues <INPUT type="checkbox" name="bassiste"><br>
+					Jazz <INPUT type="checkbox" name="batteur">
+					Rap <INPUT type="checkbox" name="chanteur"><br>
+				<p></p>
+				<p></p>
 				<p></p>
 				<p></p>
 				<p>Description du groupe:<br><TEXTAREA name="descriptiongroupe" rows="8" cols="20">
