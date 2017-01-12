@@ -30,7 +30,7 @@
 ini_set('display_errors', 'On');
 error_reporting(E_ALL);
 
-
+$nbrequete = 0;
 
 $mysqli = new mysqli("mysql", "E102952E","WKXM9C9F", "E102952E");
 if (isset( $_POST['nomgroupe'])){
@@ -59,21 +59,21 @@ for($i=1;$i<=4;$i++){
 }
 }
 
-printf ($nomg,$villeg);
+
 
 if (isset($_POST['rock']) || isset($_POST['blues']) || isset($_POST['jazz'])|| isset($_POST['rap']) ) {
 for($j=1;$j<=4;$j++){
 	if(isset($_POST['rock'])){
-		$stylem='Rock';
+		$styleg='Rock';
 	}else{
 		if(isset($_POST['blues'])){
-			$stylem='Blues';
+			$styleg='Blues';
 		}else{
 			if(isset($_POST['jazz'])){
-				$stylem='Jazz';
+				$styleg='Jazz';
 			}else{
 				if(isset($_POST['rap'])){
-					$stylem='Rap';
+					$styleg='Rap';
 				}
 			}
 		}
@@ -81,7 +81,7 @@ for($j=1;$j<=4;$j++){
 }
 }
 //rajouter conditions négatives
-if (isset( $_POST['nomgroupe'])){
+if (isset( $_POST['nomgroupe']) && empty($villeg) && empty($instru) && empty($styleg)){
 	$req = "SELECT nomg, villeg, styleg, telephoneg FROM Groupe WHERE nomg='$nomg'";
 	$stmt = mysqli_prepare($mysqli,$req);
 	mysqli_stmt_execute($stmt);
@@ -90,8 +90,9 @@ if (isset( $_POST['nomgroupe'])){
 		printf ("Nom du groupe: %s <br> Ville: %s <br> Style: %s <br> Téléphone: %s <br> __________________________________ <br>",$nomg,$villeg,$styleg,$telephoneg);
 	}
 	mysqli_stmt_close($stmt);
+	$nbrequete += 1;
 }
-if (isset( $_POST['villegroupe'])){
+if (isset( $_POST['villegroupe']) && empty($nomg) && empty($instru) && empty($styleg) && $nbrequete<1){
 	$req = "SELECT nomg, villeg, styleg, telephoneg FROM Groupe WHERE villeg='$villeg'";
 	$stmt = mysqli_prepare($mysqli,$req);
 	mysqli_stmt_execute($stmt);
@@ -100,10 +101,25 @@ if (isset( $_POST['villegroupe'])){
 		printf ("Nom du groupe: %s <br> Ville: %s <br> Style: %s <br> Téléphone: %s <br> __________________________________ <br>",$nomg,$villeg,$styleg,$telephoneg);
 	}
 	mysqli_stmt_close($stmt);
+	$nbrequete = $nbrequete + 1;
+}
+
+if (isset( $_POST['villegroupe']) && isset( $_POST['nomgroupe']) && empty($instru) && empty($styleg) && $nbrequete <1){
+	$req = "SELECT nomg, villeg, styleg, telephoneg FROM Groupe WHERE villeg='$villeg' AND nomg='$nomg'";
+	$stmt = mysqli_prepare($mysqli,$req);
+	mysqli_stmt_execute($stmt);
+	mysqli_stmt_bind_result($stmt, $nomg, $villeg, $styleg, $telephoneg);
+	while (mysqli_stmt_fetch($stmt)) {
+		printf ("Nom du groupe: %s <br> Ville: %s <br> Style: %s <br> Téléphone: %s <br> __________________________________ <br>",$nomg,$villeg,$styleg,$telephoneg);
+	}
+	mysqli_stmt_close($stmt);
+	$nbrequete = $nbrequete + 1;
 }
 
 
-if (empty($nomg)  && empty($villeg) && empty($instru) && empty($stylem)){ 
+
+
+if (empty($nomg)  && empty($villeg) && empty($instru) && empty($styleg) && $nbrequete <1){ 
 	$req = "SELECT nomg, villeg, styleg, telephoneg FROM Groupe";
 	$stmt = mysqli_prepare($mysqli,$req);
 	mysqli_stmt_execute($stmt);
@@ -112,8 +128,64 @@ if (empty($nomg)  && empty($villeg) && empty($instru) && empty($stylem)){
 		printf ("Nom du groupe: %s <br> Ville: %s <br> Style: %s <br> Téléphone: %s <br> __________________________________ <br>",$nomg,$villeg,$styleg,$telephoneg);
 	}
 	mysqli_stmt_close($stmt);
+	$nbrequete = $nbrequete + 1;
 }
 
+
+for($j=1;$j<=4;$j++){
+	if($styleg =='Rock' && empty($nomg)  && empty($villeg) && empty($instru) && $nbrequete <1){
+		$req = "SELECT nomg, villeg, styleg, telephoneg FROM Groupe WHERE styleg='$styleg'";
+		$stmt = mysqli_prepare($mysqli,$req);
+		mysqli_stmt_execute($stmt);
+		mysqli_stmt_bind_result($stmt, $nomg, $villeg, $styleg, $telephoneg);
+		while (mysqli_stmt_fetch($stmt)) {
+		printf ("Nom du groupe: %s <br> Ville: %s <br> Style: %s <br> Téléphone: %s <br> __________________________________ <br>",$nomg,$villeg,$styleg,$telephoneg);
+	}
+	mysqli_stmt_close($stmt);
+	$nbrequete = $nbrequete + 1;
+	}else{
+		if($styleg =='Blues' && empty($nomg)  && empty($villeg) && empty($instru) && $nbrequete <1){
+			$req = "SELECT nomg, villeg, styleg, telephoneg FROM Groupe WHERE styleg='$styleg'";
+			$stmt = mysqli_prepare($mysqli,$req);
+			mysqli_stmt_execute($stmt);
+			mysqli_stmt_bind_result($stmt, $nomg, $villeg, $styleg, $telephoneg);
+			while (mysqli_stmt_fetch($stmt)) {
+			printf ("Nom du groupe: %s <br> Ville: %s <br> Style: %s <br> Téléphone: %s <br> __________________________________ <br>",$nomg,$villeg,$styleg,$telephoneg);
+			}
+		mysqli_stmt_close($stmt);
+		$nbrequete = $nbrequete + 1;
+		}else{
+			if($styleg =='Jazz'&& empty($nomg)  && empty($villeg) && empty($instru) && $nbrequete <1){
+				$req = "SELECT nomg, villeg, styleg, telephoneg FROM Groupe WHERE styleg='$styleg'";
+				$stmt = mysqli_prepare($mysqli,$req);
+				mysqli_stmt_execute($stmt);
+				mysqli_stmt_bind_result($stmt, $nomg, $villeg, $styleg, $telephoneg);
+				while (mysqli_stmt_fetch($stmt)) {
+				printf ("Nom du groupe: %s <br> Ville: %s <br> Style: %s <br> Téléphone: %s <br> __________________________________ <br>",$nomg,$villeg,$styleg,$telephoneg);
+				}
+				mysqli_stmt_close($stmt);
+				$nbrequete = $nbrequete + 1;
+			}else{
+				if($styleg =='Rap'&& empty($nomg)  && empty($villeg) && empty($instru) && $nbrequete <1){
+					$req = "SELECT nomg, villeg, styleg, telephoneg FROM Groupe WHERE styleg='$styleg'";
+					$stmt = mysqli_prepare($mysqli,$req);
+					mysqli_stmt_execute($stmt);
+					mysqli_stmt_bind_result($stmt, $nomg, $villeg, $styleg, $telephoneg);
+					while (mysqli_stmt_fetch($stmt)) {
+					printf ("Nom du groupe: %s <br> Ville: %s <br> Style: %s <br> Téléphone: %s <br> __________________________________ <br>",$nomg,$villeg,$styleg,$telephoneg);
+				}
+				mysqli_stmt_close($stmt);
+				$nbrequete = $nbrequete + 1;
+				}
+				}
+			}
+		}
+	}
+
+
+if ($nbrequete == 0){
+	print("Aucun résultat trouvé");
+}
 
 $mysqli->close();
 ?>
