@@ -7,15 +7,6 @@
 <body>
 
 
-<!-- Barre de navigation horizontale, top !-->
-<ul class="nav" id="nav">
-  <li><a href="#home">Accueil</a></li>
-    <li><a href="#addgroup">Ajouter votre groupe</a></li>
-	<li><a href="#addmusician">Ajouter votre profil de musicien</a></li>
-  <li><a href="#about">A propos</a></li>
-  <li><a href="#contact">Contact</a></li>
-</ul>
-
 <!-- Titre !-->
    <header>
         <div class="header">
