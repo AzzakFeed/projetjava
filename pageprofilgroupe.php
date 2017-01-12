@@ -17,16 +17,16 @@ if ( isset($_POST['nomgroupe']) && isset($_POST['villegroupe'])  && isset($_POST
  $description = $_POST['descriptiongroupe'];
 
 for($j=1;$j<=4;$j++){
-	if(isset($_POST['rock'])){
+	if($_POST['rock'] == on){
 		$styleg='Rock';
 	}else{
-		if(isset($_POST['blues'])){
+		if($_POST['blues'] == on){
 			$styleg='Blues';
 		}else{
-			if(isset($_POST['jazz'])){
+			if($_POST['jazz'] == on){
 				$styleg='Jazz';
 			}else{
-				if(isset($_POST['rap'])){
+				if($_POST['rap'] == on){
 					$styleg='Rap';
 				}
 			}
