@@ -12,12 +12,12 @@ public class Combat{
 
 		int[] tabRes = new int[2];//tableau de résultat: 1ère case pertes de l'attaquant, 2ème case pertes du défenseur
 		int i = 0;
-		int jetsatt = 0;
+		int jetsatt = 0; // Nombre de jets de l'attaquant
 		int jetsdef = 0;
 		int resultatatt[] = {0,0,0}; // tableau des résultats des lancés de dés de l'attaquant
 		int resultatdef[] = {0,0}; // tableau des résultats des lancés de dés du défenseur
 
-		int maxatt = 0;
+		int maxatt = 0; // Valeur maximale des jet(s) de dé de l'attaquant
 		int maxdef = 0;
 		
 		// On lance au maximum 3 dés pour l'attaquant si pions >2, 2 si pions = 2, 1 si pion = 1
@@ -38,7 +38,7 @@ public class Combat{
 		System.out.println("Jet de l'attaquant : " + resultatatt[i]);
 		}
 
-		// On lance au maximum 2 dés pour le défenseur, 1 si nombre de régiments <3
+		// On lance au maximum 2 dés pour le défenseur, 1 si nombre d'armées <3
 		if (def== 1){
 			jetsdef = 1;
 			}
