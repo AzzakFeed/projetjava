@@ -59,6 +59,8 @@ for($i=1;$i<=4;$i++){
 }
 }
 
+
+
 if (isset($_POST['rock']) || isset($_POST['blues']) || isset($_POST['jazz'])|| isset($_POST['rap']) ) {
 for($j=1;$j<=4;$j++){
 	if(isset($_POST['rock'])){
@@ -80,35 +82,35 @@ for($j=1;$j<=4;$j++){
 }
 //rajouter conditions négatives
 if (isset( $_POST['nomgroupe']) && empty($villeg) && empty($instru) && empty($styleg)){
-	$req = "SELECT nomg, villeg, styleg, telephoneg FROM Groupe WHERE nomg='$nomg'";
+	$req = "SELECT nomg, villeg, styleg, telephoneg, adressemailg, siteg, descriptiong FROM Groupe WHERE nomg='$nomg'";
 	$stmt = mysqli_prepare($mysqli,$req);
 	mysqli_stmt_execute($stmt);
-	mysqli_stmt_bind_result($stmt, $nomg, $villeg, $styleg, $telephoneg);
+	mysqli_stmt_bind_result($stmt, $nomg, $villeg, $styleg, $telephoneg, $adressemailg, $siteg, $descriptiong);
 	while (mysqli_stmt_fetch($stmt)) {
-		printf ("Nom du groupe: %s <br> Ville: %s <br> Style: %s <br> Téléphone: %s <br> __________________________________ <br>",$nomg,$villeg,$styleg,$telephoneg);
+		printf ("Nom du groupe: %s <br> Ville: %s <br> Style: %s <br> Téléphone: %s <br> Adresse email : %s <br> Site internet : %s <br> Description : %s <br> __________________________________ <br>",$nomg,$villeg,$styleg,$telephoneg,$adressemailg, $siteg, $descriptiong);
 	}
 	mysqli_stmt_close($stmt);
 	$nbrequete += 1;
 }
 if (isset( $_POST['villegroupe']) && empty($nomg) && empty($instru) && empty($styleg) && $nbrequete<1){
-	$req = "SELECT nomg, villeg, styleg, telephoneg FROM Groupe WHERE villeg='$villeg'";
+	$req = "SELECT nomg, villeg, styleg, telephoneg, adressemailg, siteg, descriptiong FROM Groupe WHERE villeg='$villeg'";
 	$stmt = mysqli_prepare($mysqli,$req);
 	mysqli_stmt_execute($stmt);
-	mysqli_stmt_bind_result($stmt, $nomg, $villeg, $styleg, $telephoneg);
+	mysqli_stmt_bind_result($stmt, $nomg, $villeg, $styleg, $telephoneg, $adressemailg, $siteg, $descriptiong);
 	while (mysqli_stmt_fetch($stmt)) {
-		printf ("Nom du groupe: %s <br> Ville: %s <br> Style: %s <br> Téléphone: %s <br> __________________________________ <br>",$nomg,$villeg,$styleg,$telephoneg);
+		printf ("Nom du groupe: %s <br> Ville: %s <br> Style: %s <br> Téléphone: %s <br> Adresse email : %s <br> Site internet : %s <br> Description : %s <br>__________________________________ <br>",$nomg,$villeg,$styleg,$telephoneg, $adressemailg, $siteg, $descriptiong);
 	}
 	mysqli_stmt_close($stmt);
 	$nbrequete = $nbrequete + 1;
 }
 
 if (isset( $_POST['villegroupe']) && isset( $_POST['nomgroupe']) && empty($instru) && empty($styleg) && $nbrequete <1){
-	$req = "SELECT nomg, villeg, styleg, telephoneg FROM Groupe WHERE villeg='$villeg' AND nomg='$nomg'";
+	$req = "SELECT nomg, villeg, styleg, telephoneg, adressemailg, siteg, descriptiong FROM Groupe WHERE villeg='$villeg' AND nomg='$nomg'";
 	$stmt = mysqli_prepare($mysqli,$req);
 	mysqli_stmt_execute($stmt);
-	mysqli_stmt_bind_result($stmt, $nomg, $villeg, $styleg, $telephoneg);
+	mysqli_stmt_bind_result($stmt, $nomg, $villeg, $styleg, $telephoneg, $adressemailg, $siteg, $descriptiong);
 	while (mysqli_stmt_fetch($stmt)) {
-		printf ("Nom du groupe: %s <br> Ville: %s <br> Style: %s <br> Téléphone: %s <br> __________________________________ <br>",$nomg,$villeg,$styleg,$telephoneg);
+		printf ("Nom du groupe: %s <br> Ville: %s <br> Style: %s <br> Téléphone: %s  Adresse email : %s <br> Site internet : %s <br> Description : %s <br><br> __________________________________ <br>",$nomg,$villeg,$styleg,$telephoneg, $adressemailg, $siteg, $descriptiong);
 	}
 	mysqli_stmt_close($stmt);
 	$nbrequete = $nbrequete + 1;
@@ -118,58 +120,59 @@ if (isset( $_POST['villegroupe']) && isset( $_POST['nomgroupe']) && empty($instr
 
 
 if (empty($nomg)  && empty($villeg) && empty($instru) && empty($styleg)){ 
-	$req = "SELECT nomg, villeg, styleg, telephoneg FROM Groupe";
+	$req = "SELECT nomg, villeg, styleg, telephoneg, adressemailg, siteg, descriptiong FROM Groupe";
 	$stmt = mysqli_prepare($mysqli,$req);
 	mysqli_stmt_execute($stmt);
-	mysqli_stmt_bind_result($stmt, $nomg, $villeg, $styleg, $telephoneg);
+	mysqli_stmt_bind_result($stmt, $nomg, $villeg, $styleg, $telephoneg, $adressemailg, $siteg, $descriptiong);
 	while (mysqli_stmt_fetch($stmt)) {
-		printf ("Nom du groupe: %s <br> Ville: %s <br> Style: %s <br> Téléphone: %s <br> __________________________________ <br>",$nomg,$villeg,$styleg,$telephoneg);
+		printf ("Nom du groupe: %s <br> Ville: %s <br> Style: %s <br> Téléphone: %s <br> Adresse email : %s <br> Site internet : %s <br> Description : %s <br> __________________________________ <br>",$nomg,$villeg,$styleg,$telephoneg, $adressemailg, $siteg, $descriptiong);
 	}
 	mysqli_stmt_close($stmt);
 	$nbrequete = $nbrequete + 1;
 }
 
+
 for($j=1;$j<=4;$j++){
 	if($styleg =='Rock' && empty($nomg)  && empty($villeg) && empty($instru) && $nbrequete <1){
-		$req = "SELECT nomg, villeg, styleg, telephoneg FROM Groupe WHERE styleg='$styleg'";
+		$req = "SELECT nomg, villeg, styleg, telephoneg, adressemailg, siteg, descriptiong FROM Groupe WHERE styleg='$styleg'";
 		$stmt = mysqli_prepare($mysqli,$req);
 		mysqli_stmt_execute($stmt);
-		mysqli_stmt_bind_result($stmt, $nomg, $villeg, $styleg, $telephoneg);
+		mysqli_stmt_bind_result($stmt, $nomg, $villeg, $styleg, $telephoneg, $adressemailg, $siteg, $descriptiong);
 		while (mysqli_stmt_fetch($stmt)) {
-		printf ("Nom du groupe: %s <br> Ville: %s <br> Style: %s <br> Téléphone: %s <br> __________________________________ <br>",$nomg,$villeg,$styleg,$telephoneg);
+		printf ("Nom du groupe: %s <br> Ville: %s <br> Style: %s <br> Téléphone: %s <br> Adresse email : %s <br> Site internet : %s <br> Description : %s <br> __________________________________ <br>",$nomg,$villeg,$styleg,$telephoneg, $adressemailg, $siteg, $descriptiong);
 	}
 	mysqli_stmt_close($stmt);
 	$nbrequete = $nbrequete + 1;
 	}else{
 		if($styleg =='Blues' && empty($nomg)  && empty($villeg) && empty($instru) && $nbrequete <1){
-			$req = "SELECT nomg, villeg, styleg, telephoneg FROM Groupe WHERE styleg='$styleg'";
+			$req = "SELECT nomg, villeg, styleg, telephoneg, adressemailg, siteg, descriptiong FROM Groupe WHERE styleg='$styleg'";
 			$stmt = mysqli_prepare($mysqli,$req);
 			mysqli_stmt_execute($stmt);
-			mysqli_stmt_bind_result($stmt, $nomg, $villeg, $styleg, $telephoneg);
+			mysqli_stmt_bind_result($stmt, $nomg, $villeg, $styleg, $telephoneg, $adressemailg, $siteg, $descriptiong);
 			while (mysqli_stmt_fetch($stmt)) {
-			printf ("Nom du groupe: %s <br> Ville: %s <br> Style: %s <br> Téléphone: %s <br> __________________________________ <br>",$nomg,$villeg,$styleg,$telephoneg);
+			printf ("Nom du groupe: %s <br> Ville: %s <br> Style: %s <br> Téléphone: %s <br> Adresse email : %s <br> Site internet : %s <br> Description : %s <br> __________________________________ <br>",$nomg,$villeg,$styleg,$telephoneg, $adressemailg, $siteg, $descriptiong);
 			}
 		mysqli_stmt_close($stmt);
 		$nbrequete = $nbrequete + 1;
 		}else{
 			if($styleg =='Jazz'&& empty($nomg)  && empty($villeg) && empty($instru) && $nbrequete <1){
-				$req = "SELECT nomg, villeg, styleg, telephoneg FROM Groupe WHERE styleg='$styleg'";
+				$req = "SELECT nomg, villeg, styleg, telephoneg, adressemailg, siteg, descriptiong FROM Groupe WHERE styleg='$styleg'";
 				$stmt = mysqli_prepare($mysqli,$req);
 				mysqli_stmt_execute($stmt);
-				mysqli_stmt_bind_result($stmt, $nomg, $villeg, $styleg, $telephoneg);
+				mysqli_stmt_bind_result($stmt, $nomg, $villeg, $styleg, $telephoneg, $adressemailg, $siteg, $descriptiong);
 				while (mysqli_stmt_fetch($stmt)) {
-				printf ("Nom du groupe: %s <br> Ville: %s <br> Style: %s <br> Téléphone: %s <br> __________________________________ <br>",$nomg,$villeg,$styleg,$telephoneg);
+				printf ("Nom du groupe: %s <br> Ville: %s <br> Style: %s <br> Téléphone: %s <br> Adresse email : %s <br> Site internet : %s <br> Description : %s <br>__________________________________ <br>",$nomg,$villeg,$styleg,$telephoneg, $adressemailg, $siteg, $descriptiong);
 				}
 				mysqli_stmt_close($stmt);
 				$nbrequete = $nbrequete + 1;
 			}else{
 				if($styleg =='Rap'&& empty($nomg)  && empty($villeg) && empty($instru) && $nbrequete <1){
-					$req = "SELECT nomg, villeg, styleg, telephoneg FROM Groupe WHERE styleg='$styleg'";
+					$req = "SELECT nomg, villeg, styleg, telephoneg, adressemailg, siteg, descriptiong FROM Groupe WHERE styleg='$styleg'";
 					$stmt = mysqli_prepare($mysqli,$req);
 					mysqli_stmt_execute($stmt);
-					mysqli_stmt_bind_result($stmt, $nomg, $villeg, $styleg, $telephoneg);
+					mysqli_stmt_bind_result($stmt, $nomg, $villeg, $styleg, $telephoneg, $adressemailg, $siteg, $descriptiong);
 					while (mysqli_stmt_fetch($stmt)) {
-					printf ("Nom du groupe: %s <br> Ville: %s <br> Style: %s <br> Téléphone: %s <br> __________________________________ <br>",$nomg,$villeg,$styleg,$telephoneg);
+					printf ("Nom du groupe: %s <br> Ville: %s <br> Style: %s <br> Téléphone: %s <br> Adresse email : %s <br> Site internet : %s <br> Description : %s <br>__________________________________ <br>",$nomg,$villeg,$styleg,$telephoneg, $adressemailg, $siteg, $descriptiong);
 				}
 				mysqli_stmt_close($stmt);
 				$nbrequete = $nbrequete + 1;
@@ -179,6 +182,8 @@ for($j=1;$j<=4;$j++){
 		}
 	}
 
+
+/* ne marche pas
 for($j=1;$j<=4;$j++){
 	if($instru =='guitare' && empty($nomg)  && empty($villeg) && empty($styleg) && $nbrequete <1){
 		$req = "SELECT nomg, villeg, styleg, telephoneg FROM Groupe WHERE grecherchem='$instru'";
@@ -228,9 +233,18 @@ for($j=1;$j<=4;$j++){
 			}
 		}
 	}
-	
+	*/
+
+
+
+
+
+
+
+
+
 if ($nbrequete == 0){
-	print("Aucun résultat trouvé");
+	print("Requête invalide");
 }
 
 $mysqli->close();
