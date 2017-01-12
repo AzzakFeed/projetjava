@@ -105,10 +105,10 @@ for($j=1;$j<=4;$j++){
 					Jazz <INPUT type="checkbox" name="jazz">
 					Rap <INPUT type="checkbox" name="rap"><br>
 				<p>Notre groupe recherche:<br>
-					Rock <INPUT type="checkbox" name="guitariste">
-					Blues <INPUT type="checkbox" name="bassiste"><br>
-					Jazz <INPUT type="checkbox" name="batteur">
-					Rap <INPUT type="checkbox" name="chanteur"><br>
+					Guitariste <INPUT type="checkbox" name="guitariste">
+					Bassiste <INPUT type="checkbox" name="bassiste"><br>
+					Batteur <INPUT type="checkbox" name="batteur">
+					Chanteur <INPUT type="checkbox" name="chanteur"><br>
 				<p></p>
 				<p></p>
 				<p></p>
