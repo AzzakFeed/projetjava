@@ -66,7 +66,7 @@ for($j=1;$j<=4;$j++){
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="style.css">
-<title>Profil groupe</title>
+<title>Cherchegroupe.com</title>
 </head>
 <body>
 
@@ -76,7 +76,7 @@ for($j=1;$j<=4;$j++){
 	<li><a href="pageaccueil.php">Accueil</a></li>
     <li><a href="pageprofilgroupe.php">Ajouter votre groupe</a></li>
 	<li><a href="pageprofilmusicien.php">Ajouter votre profil de musicien</a></li>
-	<li><a href="recherche.php">votre recherche</a></li>
+	<li><a href="recherche.php">Accéder à l'annuaire</a></li>
 	<li><a href="pageapropos.php">A propos</a></li>
 	<li><a href="pagecontact.php">Contact</a></li>
     <li><a href="connexion.php">Se déconnecter</a></li>

@@ -2,7 +2,7 @@
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="style.css">
-<title>A Propos</title>
+<title>Cherchegroupe.com</title>
 </head>
 <body>
 
@@ -20,15 +20,15 @@
 
 <!-- Titre !-->
    <header>
-        <div class="header">
-                <h1>AnnuaireGroupe<h1>
+        <div id="formulaire">
+                <h1>Cherchegroupe.com<h1>
 				<p>A propos</p>
         </div>
     </header>
 
 <div class="contenu" id="box">
 	<br>
-	Recherchegroupe est une plateforme répertoriant des musiciens et des groupes de musique en France métropolitaine. <br> <br>
+	Cherchegroupe.com est une plateforme répertoriant des musiciens et des groupes de musique en France métropolitaine. <br> <br>
 	Enregistrez-vous et contactez directement les groupes et les musiciens qui vous intéressent! <br> <br>
 	Notre base de données "matche" les groupes et les profils de musiciens en fonction des talents recherchés. Elle vous permet également de classer vos requêtes par style de musique et localisation.
 	<br> <br>

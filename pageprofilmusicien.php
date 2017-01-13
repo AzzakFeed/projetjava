@@ -57,7 +57,7 @@ for($j=1;$j<=4;$j++){
  VALUES ('$a', '$b', '$c', '$d', '$e', '$f', '$g','$description', '$instru', '$stylem')";
  $mysqli->query($sql);
  
- header('Location: http://pubhtml/~E092321Z/Projet_PHP/succesformulaire.php');
+ header('Location: succesformulaire.php');
 }
 ?>
 
@@ -65,17 +65,17 @@ for($j=1;$j<=4;$j++){
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="style.css">
-<title>Profil Musicien</title>
+<title>Cherchegroupe.com</title>
 </head>
 <body>
 
 
 <!-- Barre de navigation horizontale, top !-->
 <ul class="nav" id="nav">
-	<li><a href="pageaccueuil.php">Accueil</a></li>
+	<li><a href="pageaccueil.php">Accueil</a></li>
     <li><a href="pageprofilgroupe.php">Ajouter votre groupe</a></li>
 	<li><a href="pageprofilmusicien.php">Ajouter votre profil de musicien</a></li>
-	<li><a href="recherche.php">votre recherche</a></li>
+	<li><a href="recherche.php">Accéder à l'annuaire</a></li>
 	<li><a href="pageapropos.php">A propos</a></li>
 	<li><a href="pagecontact.php">Contact</a></li>
     <li><a href="connexion.php">Se déconnecter</a></li>

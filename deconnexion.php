@@ -9,12 +9,8 @@
 
 <!-- Titre !-->
    <header>
-        <div class="header">
-                <h1>Nom<h1>
-				<p>Déconnexion</p>
-        </div>
-    </header>
-
+      
+ 
 <div class="contenu" id="smallbox">
 	Merci de votre visite et à bientôt !
 	<?php
@@ -27,7 +23,8 @@
 	 <br> <br>
 <a href="connexion.php" class="button">Retour à la page d'accueil</a>
 	
-	
+	   </header>
+
 	
 	
 

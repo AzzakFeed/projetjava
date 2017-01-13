@@ -2,7 +2,7 @@
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="style.css">
-<title>Contact</title>
+<title>Cherchegroupe.com</title>
 </head>
 <body>
 
@@ -20,8 +20,8 @@
 
 <!-- Titre !-->
    <header>
-        <div class="header">
-                <h1>AnnuaireGroupe<h1>
+         <div id="formulaire">
+                <h1>Cherchegroupe.com<h1>
 				<p>Contact</p>
         </div>
     </header>
@@ -29,10 +29,14 @@
 <div class="contenu" id="box">
 	<br>
 	Site réalisé par Vincent CADIOT et Ken OSHIRO, Master 2 CCI de l'Université de Nantes <br> <br>
+	
+	Dans le cadre du cours : Technologies Web <br> <br>
+	
 	Adresse de contact : ken.oshiro@etu-univ.nantes.fr , vincent.cadiot@etu-univ.nantes.fr <br> <br>
-	Mise à jour : 18/01/2017
-	<br> <br>
-	   
+	
+	Dernière mise à jour : 13/01/2017
+	
+	
 	  
 	    </div>
 

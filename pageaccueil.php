@@ -2,8 +2,8 @@
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="style.css">
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>ProjetPHP</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Cherchegroupe.com</title>
 </head>
 <body>
 
@@ -13,30 +13,29 @@
   <li><a href="pageaccueil.php">Accueil</a></li>
     <li><a href="pageprofilgroupe.php">Ajouter votre groupe</a></li>
 	<li><a href="pageprofilmusicien.php">Ajouter votre profil de musicien</a></li>
-	<li><a href="recherche.php">Accéder à l'annuaire</a></li>
+	<li><a href="recherche.php">AccÃ©der Ã  l'annuaire</a></li>
 	<li><a href="pageapropos.php">A propos</a></li>
 	<li><a href="pagecontact.php">Contact</a></li>
-    <li><a href="deconnexion.php">Se déconnecter</a></li>
+    <li><a href="deconnexion.php">Se dÃ©connecter</a></li>
 </ul>
 
 <!-- Titre !-->
     <header>
-        <div class="header">
-                <h1>AnnuaireGroupe<h1>
-				<p>Page d'accueil</p>
+      <div id="formulaire">
+				<h1>Page d'accueil</h1>
         </div>
     </header>
 
 <!-- Bouttons !-->	
 
-<!-- Aller à la page add musician!-->
-<a href="#" class="button">Je veux m'enregistrer en tant que groupe</a>
+<!-- Aller Ã  la page add musician!-->
+<a href="pageprofilgroupe.php" class="button">Je veux m'enregistrer en tant que groupe</a>
 <br/>
 <br/>
 <br/>
-<!-- Aller à la page add group !-->
-<a href="#" class="button">Je veux m'enregistrer en tant que musicien</a>
-<!-- Aller à la page recherche !-->
+<!-- Aller Ã  la page add group !-->
+<a href="pageprofilmusicien.php" class="button">Je veux m'enregistrer en tant que musicien</a>
+<!-- Aller Ã  la page recherche !-->
 <br/>
 <br/>
 <br/>

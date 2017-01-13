@@ -30,7 +30,7 @@ function showlogin() {
 
 
 
-<title>ProjetPHP</title>
+<title>Cherchegroupe.com</title>
 </head>
 <body>
 
@@ -48,8 +48,8 @@ function showlogin() {
 
 <!-- Titre !-->
     <header>
-        <div class="header">
-               <h1>AnnuaireGroupe<h1>
+         <div id="formulaire">
+               <h1>Cherchegroupe.com<h1>
 				<p>Connexion</p>
         </div>
     </header>

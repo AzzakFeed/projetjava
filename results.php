@@ -83,12 +83,12 @@ for($j=1;$j<=4;$j++){
 }
 //seul le premier champ du formulaire est rempli
 if (isset( $_POST['nomgroupe']) && empty($villeg) && empty($instru) && empty($styleg)){
-	$req = "SELECT nomg, villeg, styleg, telephoneg FROM Groupe WHERE nomg='$nomg'";
+	$req = "SELECT nomg, villeg, styleg, telephoneg, grecherchem, adressemailg, siteg, descriptiong FROM Groupe WHERE nomg='$nomg'";
 	$stmt = mysqli_prepare($mysqli,$req);
 	mysqli_stmt_execute($stmt);
-	mysqli_stmt_bind_result($stmt, $nomg, $villeg, $styleg, $telephoneg);
+	mysqli_stmt_bind_result($stmt, $nomg, $villeg, $styleg, $telephoneg, $grecherchem, $adressemailg, $siteg, $descriptiong);
 	while (mysqli_stmt_fetch($stmt)) {
-		printf ("Nom du groupe: %s <br> Ville: %s <br> Style: %s <br> Téléphone: %s <br> __________________________________ <br>",$nomg,$villeg,$styleg,$telephoneg);
+		printf ("Nom du groupe: %s <br> Ville: %s <br> Style: %s <br> Téléphone: %s <br> Recherche un musicien : %s <br> Adresse email : %s <br> Site web :  %s <br> Description : %s <br>__________________________________ <br>",$nomg,$villeg,$styleg,$telephoneg, $grecherchem, $adressemailg, $siteg, $descriptiong);
 	}
 	mysqli_stmt_close($stmt);
 	$nbrequete += 1;
@@ -96,12 +96,12 @@ if (isset( $_POST['nomgroupe']) && empty($villeg) && empty($instru) && empty($st
 
 //seul le deuxième champ du formulaire est rempli
 if (isset( $_POST['villegroupe']) && empty($nomg) && empty($instru) && empty($styleg) && $nbrequete<1){
-	$req = "SELECT nomg, villeg, styleg, telephoneg FROM Groupe WHERE villeg='$villeg'";
+	$req = "SELECT nomg, villeg, styleg, telephoneg, grecherchem, adressemailg, siteg, descriptiong FROM Groupe WHERE villeg='$villeg'";
 	$stmt = mysqli_prepare($mysqli,$req);
 	mysqli_stmt_execute($stmt);
-	mysqli_stmt_bind_result($stmt, $nomg, $villeg, $styleg, $telephoneg);
+	mysqli_stmt_bind_result($stmt, $nomg, $villeg, $styleg, $telephoneg, $grecherchem, $adressemailg, $siteg, $descriptiong);
 	while (mysqli_stmt_fetch($stmt)) {
-		printf ("Nom du groupe: %s <br> Ville: %s <br> Style: %s <br> Téléphone: %s <br> __________________________________ <br>",$nomg,$villeg,$styleg,$telephoneg);
+		printf ("Nom du groupe: %s <br> Ville: %s <br> Style: %s <br> Téléphone: %s <br>Recherche un musicien : %s <br> Adresse email : %s <br> Site web :  %s <br> Description : %s <br>__________________________________ <br>",$nomg,$villeg,$styleg,$telephoneg, $grecherchem, $adressemailg, $siteg, $descriptiong);
 	}
 	mysqli_stmt_close($stmt);
 	$nbrequete = $nbrequete + 1;
@@ -109,12 +109,12 @@ if (isset( $_POST['villegroupe']) && empty($nomg) && empty($instru) && empty($st
 
 //seuls les champs 1 et 2 du formulaires sont remplis
 if (isset( $_POST['villegroupe']) && isset( $_POST['nomgroupe']) && empty($instru) && empty($styleg) && $nbrequete <1){
-	$req = "SELECT nomg, villeg, styleg, telephoneg FROM Groupe WHERE villeg='$villeg' AND nomg='$nomg'";
+	$req = "SELECT nomg, villeg, styleg, telephoneg, grecherchem, adressemailg, siteg, descriptiong FROM Groupe WHERE villeg='$villeg' AND nomg='$nomg'";
 	$stmt = mysqli_prepare($mysqli,$req);
 	mysqli_stmt_execute($stmt);
-	mysqli_stmt_bind_result($stmt, $nomg, $villeg, $styleg, $telephoneg);
+	mysqli_stmt_bind_result($stmt, $nomg, $villeg, $styleg, $telephoneg, $grecherchem, $adressemailg, $siteg, $descriptiong);
 	while (mysqli_stmt_fetch($stmt)) {
-		printf ("Nom du groupe: %s <br> Ville: %s <br> Style: %s <br> Téléphone: %s <br> __________________________________ <br>",$nomg,$villeg,$styleg,$telephoneg);
+		printf ("Nom du groupe: %s <br> Ville: %s <br> Style: %s <br> Téléphone: %s <br> Recherche un musicien : %s <br> Adresse email : %s <br> Site web :  %s <br> Description : %s <br>__________________________________ <br>",$nomg,$villeg,$styleg,$telephoneg, $grecherchem, $adressemailg, $siteg, $descriptiong);
 	}
 	mysqli_stmt_close($stmt);
 	$nbrequete = $nbrequete + 1;
@@ -123,12 +123,12 @@ if (isset( $_POST['villegroupe']) && isset( $_POST['nomgroupe']) && empty($instr
 
 //Aucun champ du formulaire n'est rempli
 if (empty($nomg)  && empty($villeg) && empty($instru) && empty($styleg)){ 
-	$req = "SELECT nomg, villeg, styleg, telephoneg FROM Groupe";
+	$req = "SELECT nomg, villeg, styleg, telephoneg, grecherchem, adressemailg, siteg, descriptiong FROM Groupe";
 	$stmt = mysqli_prepare($mysqli,$req);
 	mysqli_stmt_execute($stmt);
-	mysqli_stmt_bind_result($stmt, $nomg, $villeg, $styleg, $telephoneg);
-	while (mysqli_stmt_fetch($stmt)) {
-		printf ("Nom du groupe: %s <br> Ville: %s <br> Style: %s <br> Téléphone: %s <br> __________________________________ <br>",$nomg,$villeg,$styleg,$telephoneg);
+	mysqli_stmt_bind_result($stmt, $nomg, $villeg, $styleg, $telephoneg, $grecherchem, $adressemailg, $siteg, $descriptiong);
+		while (mysqli_stmt_fetch($stmt)) {
+		printf ("Nom du groupe: %s <br> Ville: %s <br> Style: %s <br> Téléphone: %s <br> Recherche un musicien : %s <br> Adresse email : %s <br> Site web :  %s <br> Description : %s <br>__________________________________ <br>",$nomg,$villeg,$styleg,$telephoneg, $grecherchem, $adressemailg, $siteg, $descriptiong);
 	}
 	mysqli_stmt_close($stmt);
 	$nbrequete = $nbrequete + 1;
@@ -137,12 +137,12 @@ if (empty($nomg)  && empty($villeg) && empty($instru) && empty($styleg)){
 //seul le 3ème champ du formulaire est rempli
 if((isset($_POST['rock']) || isset($_POST['blues']) || isset($_POST['jazz'])|| isset($_POST['rap']) ) && empty($nomg)  && empty($villeg) && empty($instru)){
 	if($nbrequete <1){
-		$req = "SELECT nomg, villeg, styleg, telephoneg FROM Groupe WHERE styleg='$styleg'";
+		$req = "SELECT nomg, villeg, styleg, telephoneg, grecherchem, adressemailg, siteg, descriptiong FROM Groupe WHERE styleg='$styleg'";
 		$stmt = mysqli_prepare($mysqli,$req);
 		mysqli_stmt_execute($stmt);
-		mysqli_stmt_bind_result($stmt, $nomg, $villeg, $styleg, $telephoneg);
+		mysqli_stmt_bind_result($stmt, $nomg, $villeg, $styleg, $telephoneg, $grecherchem, $adressemailg, $siteg, $descriptiong);
 		while (mysqli_stmt_fetch($stmt)) {
-		printf ("Nom du groupe: %s <br> Ville: %s <br> Style: %s <br> Téléphone: %s <br> __________________________________ <br>",$nomg,$villeg,$styleg,$telephoneg);
+		printf ("Nom du groupe: %s <br> Ville: %s <br> Style: %s <br> Téléphone: %s <br>Recherche un musicien : %s <br> Adresse email : %s <br> Site web :  %s <br> Description : %s <br>__________________________________ <br>",$nomg,$villeg,$styleg,$telephoneg, $grecherchem, $adressemailg, $siteg, $descriptiong);
 	}
 	mysqli_stmt_close($stmt);
 	$nbrequete = $nbrequete + 1;
@@ -152,12 +152,12 @@ if((isset($_POST['rock']) || isset($_POST['blues']) || isset($_POST['jazz'])|| i
 //seul le dernier champ du formulaire est rempli
 if((isset($_POST['guitare']) || isset($_POST['basse']) || isset($_POST['batterie'])|| isset($_POST['chanteur']) ) && empty($nomg)  && empty($villeg) && empty($styleg)){
 	if($nbrequete <1){
-		$req = "SELECT nomg, villeg, styleg, telephoneg FROM Groupe WHERE grecherchem='$instru'";
+		$req = "SELECT nomg, villeg, styleg, telephoneg, grecherchem, adressemailg, siteg, descriptiong FROM Groupe WHERE grecherchem='$instru'";
 		$stmt = mysqli_prepare($mysqli,$req);
 		mysqli_stmt_execute($stmt);
-		mysqli_stmt_bind_result($stmt, $nomg, $villeg, $styleg, $telephoneg);
+		mysqli_stmt_bind_result($stmt, $nomg, $villeg, $styleg, $telephoneg, $grecherchem, $adressemailg, $siteg, $descriptiong);
 		while (mysqli_stmt_fetch($stmt)) {
-		printf ("Nom du groupe: %s <br> Ville: %s <br> Style: %s <br> Téléphone: %s <br> __________________________________ <br>",$nomg,$villeg,$styleg,$telephoneg);
+		printf ("Nom du groupe: %s <br> Ville: %s <br> Style: %s <br> Téléphone: %s <br>Recherche un musicien : %s <br> Adresse email : %s <br> Site web :  %s <br> Description : %s <br>__________________________________ <br>",$nomg,$villeg,$styleg,$telephoneg, $grecherchem, $adressemailg, $siteg, $descriptiong);
 	}
 	mysqli_stmt_close($stmt);
 	$nbrequete = $nbrequete + 1;
@@ -167,12 +167,12 @@ if((isset($_POST['guitare']) || isset($_POST['basse']) || isset($_POST['batterie
 //seuls les champs 1 et 3 du formulaire sont remplis
 if((isset($_POST['rock']) || isset($_POST['blues']) || isset($_POST['jazz'])|| isset($_POST['rap']) ) && isset($nomg)  && empty($villeg) && empty($instru)){
 	if($nbrequete <1){
-		$req = "SELECT nomg, villeg, styleg, telephoneg FROM Groupe WHERE styleg='$styleg' AND nomg='$nomg'";
+		$req = "SELECT nomg, villeg, styleg, telephoneg, grecherchem, adressemailg, siteg, descriptiong FROM Groupe WHERE styleg='$styleg' AND nomg='$nomg'";
 		$stmt = mysqli_prepare($mysqli,$req);
 		mysqli_stmt_execute($stmt);
-		mysqli_stmt_bind_result($stmt, $nomg, $villeg, $styleg, $telephoneg);
+		mysqli_stmt_bind_result($stmt, $nomg, $villeg, $styleg, $telephoneg, $grecherchem, $adressemailg, $siteg, $descriptiong);
 		while (mysqli_stmt_fetch($stmt)) {
-		printf ("Nom du groupe: %s <br> Ville: %s <br> Style: %s <br> Téléphone: %s <br> __________________________________ <br>",$nomg,$villeg,$styleg,$telephoneg);
+		printf ("Nom du groupe: %s <br> Ville: %s <br> Style: %s <br> Téléphone: %s <br>Recherche un musicien : %s <br> Adresse email : %s <br> Site web :  %s <br> Description : %s <br>__________________________________ <br>",$nomg,$villeg,$styleg,$telephoneg, $grecherchem, $adressemailg, $siteg, $descriptiong);
 	}
 	mysqli_stmt_close($stmt);
 	$nbrequete = $nbrequete + 1;
@@ -183,12 +183,12 @@ if((isset($_POST['rock']) || isset($_POST['blues']) || isset($_POST['jazz'])|| i
 //seuls les champs 1 et 4 du formulaire sont remplis
 if((isset($_POST['guitare']) || isset($_POST['basse']) || isset($_POST['batterie'])|| isset($_POST['chanteur']) ) && isset($nomg)  && empty($villeg) && empty($styleg)){
 	if($nbrequete <1){
-		$req = "SELECT nomg, villeg, styleg, telephoneg FROM Groupe WHERE grecherchem='$instru' AND nomg='$nomg'";
+		$req = "SELECT nomg, villeg, styleg, telephoneg, grecherchem, adressemailg, siteg, descriptiong FROM Groupe WHERE grecherchem='$instru' AND nomg='$nomg'";
 		$stmt = mysqli_prepare($mysqli,$req);
 		mysqli_stmt_execute($stmt);
-		mysqli_stmt_bind_result($stmt, $nomg, $villeg, $styleg, $telephoneg);
+		mysqli_stmt_bind_result($stmt, $nomg, $villeg, $styleg, $telephoneg, $grecherchem, $adressemailg, $siteg, $descriptiong);
 		while (mysqli_stmt_fetch($stmt)) {
-		printf ("Nom du groupe: %s <br> Ville: %s <br> Style: %s <br> Téléphone: %s <br> __________________________________ <br>",$nomg,$villeg,$styleg,$telephoneg);
+		printf ("Nom du groupe: %s <br> Ville: %s <br> Style: %s <br> Téléphone: %s <br>Recherche un musicien : %s <br> Adresse email : %s <br> Site web :  %s <br> Description : %s <br>__________________________________ <br>",$nomg,$villeg,$styleg,$telephoneg, $grecherchem, $adressemailg, $siteg, $descriptiong);
 	}
 	mysqli_stmt_close($stmt);
 	$nbrequete = $nbrequete + 1;
@@ -198,12 +198,12 @@ if((isset($_POST['guitare']) || isset($_POST['basse']) || isset($_POST['batterie
 //seuls les champs 2 et 3 du formulaire sont remplis
 if((isset($_POST['rock']) || isset($_POST['blues']) || isset($_POST['jazz'])|| isset($_POST['rap']) ) && empty($nomg)  && isset($villeg) && empty($instru)){
 	if($nbrequete <1){
-		$req = "SELECT nomg, villeg, styleg, telephoneg FROM Groupe WHERE styleg='$styleg' AND villeg='$villeg'";
+		$req = "SELECT nomg, villeg, styleg, telephoneg, grecherchem, adressemailg, siteg, descriptiong FROM Groupe WHERE styleg='$styleg' AND villeg='$villeg'";
 		$stmt = mysqli_prepare($mysqli,$req);
 		mysqli_stmt_execute($stmt);
-		mysqli_stmt_bind_result($stmt, $nomg, $villeg, $styleg, $telephoneg);
+		mysqli_stmt_bind_result($stmt, $nomg, $villeg, $styleg, $telephoneg, $grecherchem, $adressemailg, $siteg, $descriptiong);
 		while (mysqli_stmt_fetch($stmt)) {
-		printf ("Nom du groupe: %s <br> Ville: %s <br> Style: %s <br> Téléphone: %s <br> __________________________________ <br>",$nomg,$villeg,$styleg,$telephoneg);
+		printf ("Nom du groupe: %s <br> Ville: %s <br> Style: %s <br> Téléphone: %s <br>Recherche un musicien : %s <br> Adresse email : %s <br> Site web :  %s <br> Description : %s <br>__________________________________ <br>",$nomg,$villeg,$styleg,$telephoneg, $grecherchem, $adressemailg, $siteg, $descriptiong);
 	}
 	mysqli_stmt_close($stmt);
 	$nbrequete = $nbrequete + 1;
@@ -213,12 +213,12 @@ if((isset($_POST['rock']) || isset($_POST['blues']) || isset($_POST['jazz'])|| i
 //seuls les champs 2 et 4 du formulaire sont remplis
 if((isset($_POST['guitare']) || isset($_POST['basse']) || isset($_POST['batterie'])|| isset($_POST['chanteur']) ) && empty($nomg)  && isset($villeg) && empty($styleg)){
 	if($nbrequete <1){
-		$req = "SELECT nomg, villeg, styleg, telephoneg FROM Groupe WHERE grecherchem='$instru' AND villeg='$villeg'";
+		$req = "SELECT nomg, villeg, styleg, telephoneg, grecherchem, adressemailg, siteg, descriptiong FROM Groupe WHERE grecherchem='$instru' AND villeg='$villeg'";
 		$stmt = mysqli_prepare($mysqli,$req);
 		mysqli_stmt_execute($stmt);
-		mysqli_stmt_bind_result($stmt, $nomg, $villeg, $styleg, $telephoneg);
+	mysqli_stmt_bind_result($stmt, $nomg, $villeg, $styleg, $telephoneg, $grecherchem, $adressemailg, $siteg, $descriptiong);
 		while (mysqli_stmt_fetch($stmt)) {
-		printf ("Nom du groupe: %s <br> Ville: %s <br> Style: %s <br> Téléphone: %s <br> __________________________________ <br>",$nomg,$villeg,$styleg,$telephoneg);
+		printf ("Nom du groupe: %s <br> Ville: %s <br> Style: %s <br> Téléphone: %s <br>Recherche un musicien : %s <br> Adresse email : %s <br> Site web :  %s <br> Description : %s <br>__________________________________ <br>",$nomg,$villeg,$styleg,$telephoneg, $grecherchem, $adressemailg, $siteg, $descriptiong);
 	}
 	mysqli_stmt_close($stmt);
 	$nbrequete = $nbrequete + 1;
@@ -228,12 +228,12 @@ if((isset($_POST['guitare']) || isset($_POST['basse']) || isset($_POST['batterie
 //seuls les champs 3 et 4 du formulaire sont remplis
 if((isset($_POST['guitare']) || isset($_POST['basse']) || isset($_POST['batterie'])|| isset($_POST['chanteur']) ) && (isset($_POST['rock']) || isset($_POST['blues']) || isset($_POST['jazz'])|| isset($_POST['rap']) ) && empty($nomg)  && empty($villeg)){
 	if($nbrequete <1){
-		$req = "SELECT nomg, villeg, styleg, telephoneg FROM Groupe WHERE grecherchem='$instru' AND styleg='$styleg'";
+		$req = "SELECT nomg, villeg, styleg, telephoneg, grecherchem, adressemailg, siteg, descriptiong FROM Groupe WHERE grecherchem='$instru' AND styleg='$styleg'";
 		$stmt = mysqli_prepare($mysqli,$req);
 		mysqli_stmt_execute($stmt);
-		mysqli_stmt_bind_result($stmt, $nomg, $villeg, $styleg, $telephoneg);
+		mysqli_stmt_bind_result($stmt, $nomg, $villeg, $styleg, $telephoneg, $grecherchem, $adressemailg, $siteg, $descriptiong);
 		while (mysqli_stmt_fetch($stmt)) {
-		printf ("Nom du groupe: %s <br> Ville: %s <br> Style: %s <br> Téléphone: %s <br> __________________________________ <br>",$nomg,$villeg,$styleg,$telephoneg);
+		printf ("Nom du groupe: %s <br> Ville: %s <br> Style: %s <br> Téléphone: %s <br>Recherche un musicien : %s <br> Adresse email : %s <br> Site web :  %s <br> Description : %s <br>__________________________________ <br>",$nomg,$villeg,$styleg,$telephoneg, $grecherchem, $adressemailg, $siteg, $descriptiong);
 	}
 	mysqli_stmt_close($stmt);
 	$nbrequete = $nbrequete + 1;
@@ -243,12 +243,12 @@ if((isset($_POST['guitare']) || isset($_POST['basse']) || isset($_POST['batterie
 //seuls les champs 1, 2 et 3 du formulaire sont remplis
 if((isset($_POST['rock']) || isset($_POST['blues']) || isset($_POST['jazz'])|| isset($_POST['rap']) ) && isset($nomg)  && isset($villeg) && empty($instru)){
 	if($nbrequete <1){
-		$req = "SELECT nomg, villeg, styleg, telephoneg FROM Groupe WHERE styleg='$styleg' AND villeg='$villeg' AND nomg='$nomg'";
+		$req = "SELECT nomg, villeg, styleg, telephoneg, grecherchem, adressemailg, siteg, descriptiong FROM Groupe WHERE styleg='$styleg' AND villeg='$villeg' AND nomg='$nomg'";
 		$stmt = mysqli_prepare($mysqli,$req);
 		mysqli_stmt_execute($stmt);
-		mysqli_stmt_bind_result($stmt, $nomg, $villeg, $styleg, $telephoneg);
+		mysqli_stmt_bind_result($stmt, $nomg, $villeg, $styleg, $telephoneg, $grecherchem, $adressemailg, $siteg, $descriptiong);
 		while (mysqli_stmt_fetch($stmt)) {
-		printf ("Nom du groupe: %s <br> Ville: %s <br> Style: %s <br> Téléphone: %s <br> __________________________________ <br>",$nomg,$villeg,$styleg,$telephoneg);
+		printf ("Nom du groupe: %s <br> Ville: %s <br> Style: %s <br> Téléphone: %s <br>Recherche un musicien : %s <br> Adresse email : %s <br> Site web :  %s <br> Description : %s <br>__________________________________ <br>",$nomg,$villeg,$styleg,$telephoneg, $grecherchem, $adressemailg, $siteg, $descriptiong);
 	}
 	mysqli_stmt_close($stmt);
 	$nbrequete = $nbrequete + 1;
@@ -258,12 +258,12 @@ if((isset($_POST['rock']) || isset($_POST['blues']) || isset($_POST['jazz'])|| i
 //seuls les champs 1, 3 et 4 du formulaire sont remplis
 if((isset($_POST['guitare']) || isset($_POST['basse']) || isset($_POST['batterie'])|| isset($_POST['chanteur']) ) && (isset($_POST['rock']) || isset($_POST['blues']) || isset($_POST['jazz'])|| isset($_POST['rap']) ) && isset($nomg)  && empty($villeg)){
 	if($nbrequete <1){
-		$req = "SELECT nomg, villeg, styleg, telephoneg FROM Groupe WHERE grecherchem='$instru' AND styleg='$styleg' AND nomg='$nomg'";
+		$req = "SELECT nomg, villeg, styleg, telephoneg, grecherchem, adressemailg, siteg, descriptiong FROM Groupe WHERE grecherchem='$instru' AND styleg='$styleg' AND nomg='$nomg'";
 		$stmt = mysqli_prepare($mysqli,$req);
 		mysqli_stmt_execute($stmt);
-		mysqli_stmt_bind_result($stmt, $nomg, $villeg, $styleg, $telephoneg);
+		mysqli_stmt_bind_result($stmt, $nomg, $villeg, $styleg, $telephoneg, $grecherchem, $adressemailg, $siteg, $descriptiong);
 		while (mysqli_stmt_fetch($stmt)) {
-		printf ("Nom du groupe: %s <br> Ville: %s <br> Style: %s <br> Téléphone: %s <br> __________________________________ <br>",$nomg,$villeg,$styleg,$telephoneg);
+		printf ("Nom du groupe: %s <br> Ville: %s <br> Style: %s <br> Téléphone: %s <br>Recherche un musicien : %s <br> Age : %s <br> Adresse email : %s <br> Site web :  %s <br> Description : %s <br>__________________________________ <br>",$nomg,$villeg,$styleg,$telephoneg, $grecherchem, $adressemailg, $siteg, $descriptiong);
 	}
 	mysqli_stmt_close($stmt);
 	$nbrequete = $nbrequete + 1;
@@ -273,12 +273,11 @@ if((isset($_POST['guitare']) || isset($_POST['basse']) || isset($_POST['batterie
 //seuls les champs 1, 2 et 4 du formulaire sont remplis
 if((isset($_POST['guitare']) || isset($_POST['basse']) || isset($_POST['batterie'])|| isset($_POST['chanteur']) ) && isset($nomg)  && isset($villeg) && empty($styleg)){
 	if($nbrequete <1){
-		$req = "SELECT nomg, villeg, styleg, telephoneg FROM Groupe WHERE grecherchem='$instru' AND villeg='$villeg' AND nomg='$nomg'";
+		$req = "SELECT nomg, villeg, styleg, telephoneg, grecherchem, adressemailg, siteg, descriptiong FROM Groupe WHERE grecherchem='$instru' AND villeg='$villeg' AND nomg='$nomg'";
 		$stmt = mysqli_prepare($mysqli,$req);
-		mysqli_stmt_execute($stmt);
-		mysqli_stmt_bind_result($stmt, $nomg, $villeg, $styleg, $telephoneg);
+		mysqli_stmt_bind_result($stmt, $nomg, $villeg, $styleg, $telephoneg, $grecherchem, $adressemailg, $siteg, $descriptiong);
 		while (mysqli_stmt_fetch($stmt)) {
-		printf ("Nom du groupe: %s <br> Ville: %s <br> Style: %s <br> Téléphone: %s <br> __________________________________ <br>",$nomg,$villeg,$styleg,$telephoneg);
+		printf ("Nom du groupe: %s <br> Ville: %s <br> Style: %s <br> Téléphone: %s <br>Recherche un musicien : %s <br> Age : %s <br> Adresse email : %s <br> Site web :  %s <br> Description : %s <br>__________________________________ <br>",$nomg,$villeg,$styleg,$telephoneg, $grecherchem, $adressemailg, $siteg, $descriptiong);
 	}
 	mysqli_stmt_close($stmt);
 	$nbrequete = $nbrequete + 1;
@@ -288,12 +287,12 @@ if((isset($_POST['guitare']) || isset($_POST['basse']) || isset($_POST['batterie
 //seuls les champs 2, 3 et 4 du formulaire sont remplis
 if((isset($_POST['guitare']) || isset($_POST['basse']) || isset($_POST['batterie'])|| isset($_POST['chanteur']) ) && (isset($_POST['rock']) || isset($_POST['blues']) || isset($_POST['jazz'])|| isset($_POST['rap']) ) && empty($nomg)  && isset($villeg)){
 	if($nbrequete <1){
-		$req = "SELECT nomg, villeg, styleg, telephoneg FROM Groupe WHERE grecherchem='$instru' AND styleg='$styleg' AND villeg='$villeg'";
+		$req = "SELECT nomg, villeg, styleg, telephoneg, grecherchem, adressemailg, siteg, descriptiong FROM Groupe WHERE grecherchem='$instru' AND styleg='$styleg' AND villeg='$villeg'";
 		$stmt = mysqli_prepare($mysqli,$req);
 		mysqli_stmt_execute($stmt);
-		mysqli_stmt_bind_result($stmt, $nomg, $villeg, $styleg, $telephoneg);
+		mysqli_stmt_bind_result($stmt, $nomg, $villeg, $styleg, $telephoneg, $grecherchem, $adressemailg, $siteg, $descriptiong);
 		while (mysqli_stmt_fetch($stmt)) {
-		printf ("Nom du groupe: %s <br> Ville: %s <br> Style: %s <br> Téléphone: %s <br> __________________________________ <br>",$nomg,$villeg,$styleg,$telephoneg);
+		printf ("Nom du groupe: %s <br> Ville: %s <br> Style: %s <br> Téléphone: %s <br>Recherche un musicien : %s <br> Age : %s <br> Adresse email : %s <br> Site web :  %s <br> Description : %s <br>__________________________________ <br>",$nomg,$villeg,$styleg,$telephoneg, $grecherchem, $adressemailg, $siteg, $descriptiong);
 	}
 	mysqli_stmt_close($stmt);
 	$nbrequete = $nbrequete + 1;
@@ -303,12 +302,12 @@ if((isset($_POST['guitare']) || isset($_POST['basse']) || isset($_POST['batterie
 //tout les champs du formulaire sont remplis
 if((isset($_POST['guitare']) || isset($_POST['basse']) || isset($_POST['batterie'])|| isset($_POST['chanteur']) ) && (isset($_POST['rock']) || isset($_POST['blues']) || isset($_POST['jazz'])|| isset($_POST['rap']) ) && isset($nomg)  && isset($villeg)){
 	if($nbrequete <1){
-		$req = "SELECT nomg, villeg, styleg, telephoneg FROM Groupe WHERE grecherchem='$instru' AND styleg='$styleg' AND villeg='$villeg' AND nomg='$nomg'";
+		$req = "SELECT nomg, villeg, styleg, telephoneg, grecherchem, adressemailg, siteg, descriptiong FROM Groupe WHERE grecherchem='$instru' AND styleg='$styleg' AND villeg='$villeg' AND nomg='$nomg'";
 		$stmt = mysqli_prepare($mysqli,$req);
 		mysqli_stmt_execute($stmt);
-		mysqli_stmt_bind_result($stmt, $nomg, $villeg, $styleg, $telephoneg);
+		mysqli_stmt_bind_result($stmt, $nomg, $villeg, $styleg, $telephoneg, $grecherchem, $adressemailg, $siteg, $descriptiong);
 		while (mysqli_stmt_fetch($stmt)) {
-		printf ("Nom du groupe: %s <br> Ville: %s <br> Style: %s <br> Téléphone: %s <br> __________________________________ <br>",$nomg,$villeg,$styleg,$telephoneg);
+		printf ("Nom du groupe: %s <br> Ville: %s <br> Style: %s <br> Téléphone: %s <br>Recherche un musicien : %s <br> Age : %s <br> Adresse email : %s <br> Site web :  %s <br> Description : %s <br>__________________________________ <br>",$nomg,$villeg,$styleg,$telephoneg, $grecherchem, $adressemailg, $siteg, $descriptiong);
 	}
 	mysqli_stmt_close($stmt);
 	$nbrequete = $nbrequete + 1;

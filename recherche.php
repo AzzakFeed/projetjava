@@ -73,9 +73,10 @@ function searchgroup() {
 				Batterie <INPUT type="checkbox" name="batterie">
 				Chanteur <INPUT type="checkbox" name="chanteur"><br>
 				<br>
-				<input type="submit" name="submit" value="Lancer la recherche">
+				<input type="submit" name="submitm" value="Lancer la recherche">
 
 				</fieldset>
+				</form>
 		</div>
 		</div>
 		
@@ -92,7 +93,7 @@ function searchgroup() {
 		<fieldset>
 		<legend>Recherche d'un musicien</legend>
 		<p>Vous pouvez renseigner ou non les champs suivants pour affiner votre recherche. Laissez les champs vides pour que tout l'annuaire soit affiché.</p>
-				<form action="results.php" method="post" target="_blank">
+				<form action="resultsm.php" method="post" target="_blank">
 				<p>Nom du musicien:<br>
 				<input type="text" name="nomm"></p>
 				<p>Ville:<br>
@@ -108,9 +109,10 @@ function searchgroup() {
 				Batterie <INPUT type="checkbox" name="batterie">
 				Chanteur <INPUT type="checkbox" name="chanteur"><br>
 				<br>
-				<input type="submit" name="submit" value="Lancer la recherche">
+				<input type="submit" name="submitg" value="Lancer la recherche">
 
 				</fieldset>
+				</form>
 		</div>
 	</div>
 
