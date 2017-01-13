@@ -9,7 +9,7 @@ session_start();
 if ( isset($_POST['nomgroupe']) && isset($_POST['villegroupe'])  && isset($_POST['numtelg'])
   && isset($_POST['mailg'])  && isset($_POST['siteg'])   && isset($_POST['descriptiongroupe'])
 	&& (isset($_POST['rock']) || isset($_POST['blues']) || isset($_POST['jazz'])|| isset($_POST['rap']) )
-		&& (isset($_POST['guitariste']) || isset($_POST['bassiste']) || isset($_POST['batteur'])|| isset($_POST['chanteur']) )) {
+		&& (isset($_POST['guitare']) || isset($_POST['basse']) || isset($_POST['batterie'])|| isset($_POST['chanteur']) )) {
  $a = $_POST['nomgroupe'];
  $b = $_POST['villegroupe'];
  $c = $_POST['numtelg'];
@@ -35,14 +35,14 @@ for($j=1;$j<=4;$j++){
 	}
 }
 for($j=1;$j<=4;$j++){
-	if($_POST['guitariste'] == on){
-		$chercheg='guitariste';
+	if($_POST['guitare'] == on){
+		$chercheg='guitare';
 	}else{
-		if($_POST['bassiste'] == on){
-			$chercheg='bassiste';
+		if($_POST['basse'] == on){
+			$chercheg='basse';
 		}else{
-			if($_POST['batteur'] == on){
-				$chercheg='batteur';
+			if($_POST['batterie'] == on){
+				$chercheg='batterie';
 			}else{
 				if($_POST['chanteur'] == on){
 					$chercheg='chanteur';
@@ -73,7 +73,7 @@ for($j=1;$j<=4;$j++){
 
 <!-- Barre de navigation horizontale, top !-->
 <ul class="nav" id="nav">
-	<li><a href="pageaccueuil.php">Accueil</a></li>
+	<li><a href="pageaccueil.php">Accueil</a></li>
     <li><a href="pageprofilgroupe.php">Ajouter votre groupe</a></li>
 	<li><a href="pageprofilmusicien.php">Ajouter votre profil de musicien</a></li>
 	<li><a href="recherche.php">votre recherche</a></li>
@@ -104,10 +104,10 @@ for($j=1;$j<=4;$j++){
 					Blues <INPUT type="checkbox" name="blues"><br>
 					Jazz <INPUT type="checkbox" name="jazz">
 					Rap <INPUT type="checkbox" name="rap"><br>
-				<p>Notre groupe recherche:<br>
-					Guitariste <INPUT type="checkbox" name="guitariste">
-					Bassiste <INPUT type="checkbox" name="bassiste"><br>
-					Batteur <INPUT type="checkbox" name="batteur">
+				<p>Notre groupe recherche un musicien jouant de l'instrument suivant:<br>
+					Guitare <INPUT type="checkbox" name="guitare">
+					Basse <INPUT type="checkbox" name="basse"><br>
+					Batterie <INPUT type="checkbox" name="batterie">
 					Chanteur <INPUT type="checkbox" name="chanteur"><br>
 				<p></p>
 				<p></p>

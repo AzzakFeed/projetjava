@@ -29,10 +29,10 @@ function searchgroup() {
   <li><a href="pageaccueil.php">Accueil</a></li>
     <li><a href="pageprofilgroupe.php">Ajouter votre groupe</a></li>
 	<li><a href="pageprofilmusicien.php">Ajouter votre profil de musicien</a></li>
-	<li><a href="recherche.php">Accéder à l'annuaire</a></li>
+	<li><a href="recherche.php">AccÃ©der Ã  l'annuaire</a></li>
 	<li><a href="pageapropos.php">A propos</a></li>
 	<li><a href="pagecontact.php">Contact</a></li>
-    <li><a href="deconnexion.php">Se déconnecter</a></li>
+    <li><a href="deconnexion.php">Se dÃ©connecter</a></li>
 </ul>
 <!-- Titre !-->
     <header>
@@ -48,7 +48,7 @@ function searchgroup() {
 <br/>
 <button id="buttonsearchgroup" class="buttonsearchgroup" type="button" onclick="searchgroup()">Je recherche un groupe</button>
 
-<!-- Requêtes de recherche !-->
+<!-- RequÃªtes de recherche !-->
 <!-- Groupe !-->
 <div class="searchgroup" id="searchgroup"
 
@@ -56,7 +56,7 @@ function searchgroup() {
 		<div id="contenuform">
 		<fieldset>
 		<legend>Recherche d'un groupe</legend>
-		<p>Vous pouvez renseigner ou non les champs suivants pour affiner votre recherche. Laissez les champs vides pour que tout l'annuaire soit affiché.</p>
+		<p>Vous pouvez renseigner ou non les champs suivants pour affiner votre recherche. Laissez les champs vides pour que tout l'annuaire soit affichÃ©.</p>
 				<form action="results.php" method="post" target="_blank">
 				<p>Nom du groupe:<br>
 				<input type="text" name="nomgroupe"></p>
@@ -81,7 +81,7 @@ function searchgroup() {
 		
 		
 		
-<!-- Requêtes de recherche !-->
+<!-- RequÃªtes de recherche !-->
 <!-- Musicien -->
 
 
@@ -91,7 +91,7 @@ function searchgroup() {
 		<div id="contenuform">
 		<fieldset>
 		<legend>Recherche d'un musicien</legend>
-		<p>Vous pouvez renseigner ou non les champs suivants pour affiner votre recherche. Laissez les champs vides pour que tout l'annuaire soit affiché.</p>
+		<p>Vous pouvez renseigner ou non les champs suivants pour affiner votre recherche. Laissez les champs vides pour que tout l'annuaire soit affichÃ©.</p>
 				<form action="results.php" method="post" target="_blank">
 				<p>Nom du musicien:<br>
 				<input type="text" name="nomm"></p>
